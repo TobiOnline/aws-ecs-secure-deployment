@@ -3,7 +3,7 @@
 Personal DevSecOps portfolio project: build, secure, deploy, monitor and tear down a small Flask application on ECS Fargate.
 
 ## Status
-Stage 0 complete. Stage 1 app validated locally: six tests pass and Gunicorn HTTP checks pass. Screenshot evidence pending. No container or AWS infrastructure deployed.
+Stages 0 and 1 complete. Stage 2 container builds and passes restricted runtime checks; scan findings are documented in docs/SECURITY.md. Container screenshot pending. No AWS infrastructure deployed.
 
 ## Scope
 Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway, EKS or Terraform in the initial scope.
@@ -38,3 +38,28 @@ Versions were resolved from official PyPI metadata and tested locally:
 [Gunicorn](https://pypi.org/project/gunicorn/),
 [pytest](https://pypi.org/project/pytest/).
 Pins provide repeatable version selection; vulnerability review remains a separate checkpoint.
+
+## Container verification
+Docker Desktop WSL integration must be enabled for Ubuntu.
+
+```bash
+docker build -t aws-ecs-secure-deployment:stage2 .
+python3 scripts/verify-container.py
+bash scripts/scan-image.sh
+```
+
+The verification script starts a temporary container bound only to localhost, checks health,
+UID 10001 and both endpoints, then removes the container. It tests a read-only filesystem,
+dropped Linux capabilities and no-new-privileges. Those runtime settings must also be
+applied explicitly in future deployments; the Dockerfile alone does not enforce them.
+The image exposes port 8000, logs to stdout/stderr and runs Gunicorn with one worker.
+
+The base is the official Python 3.14 slim trixie image pinned by digest (container Python
+3.14.10 in this build; host development Python 3.14.4). No compiler stage is needed:
+dependencies install as wheels, and pip is removed after installation. Docker build context
+allows only the application and runtime lock, excluding credentials, evidence and Git.
+
+The scan uses the official Trivy image pinned in .trivy-image. It scans an exported image
+without Docker-socket access. Large image archives and vulnerability DB cache remain ignored
+under .cache/. The gate fails on fixable HIGH/CRITICAL findings; a passing gate does not
+mean there are no vulnerabilities. Review the full report and security notes before deployment.

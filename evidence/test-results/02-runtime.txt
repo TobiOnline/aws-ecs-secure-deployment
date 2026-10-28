@@ -1,0 +1,10 @@
+Image: aws-ecs-secure-deployment:stage2
+Image ID: sha256:744e49a3a9de6c373978275d69188e195b465deccbdad6a44da2ca1c173e1a25
+Size bytes: 45893782
+Configured non-root user: 10001:10001
+Container health: healthy
+Runtime UID: 10001
+GET / -> HTTP 200 {"service": "aws-ecs-secure-deployment", "status": "ok"}
+GET /health -> HTTP 200 {"status": "healthy"}
+Read-only root filesystem; all capabilities dropped; no new privileges.
+Temporary test container removed.

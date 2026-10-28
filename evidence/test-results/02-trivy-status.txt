@@ -1,0 +1,3 @@
+Trivy 0.76.1 completed scanning the exported final image.
+Database downloaded from mirror.gcr.io/aquasec/trivy-db:2.
+Full findings: 02-trivy.json; summary: 02-scan-summary.txt.

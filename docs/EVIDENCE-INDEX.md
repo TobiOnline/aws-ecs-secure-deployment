@@ -12,4 +12,9 @@ Repository: https://github.com/TobiOnline/aws-ecs-secure-deployment (PRIVATE, ve
 
 | Stage 1 tests | evidence/test-results/01-local-tests.txt | 2026-10-28 | pip check passed; 6 tests passed | No secrets |
 | Stage 1 live HTTP | evidence/test-results/01-live-http.txt; 01-gunicorn.log | 2026-10-28 | Gunicorn returned expected 200/200/404; stopped afterward | Localhost only; no secrets |
-| Stage 1 screenshot | evidence/screenshots/01-local-tests-health.png | Pending | Evidence missing | Capture terminal tests and HTTP transcript |
+| Stage 1 screenshot | evidence/screenshots/01-local-tests-health.png | 2026-10-28 | Six tests pass and saved HTTP checks visible | Inspected: no credentials |
+
+| Stage 2 build | evidence/test-results/02-build.txt | 2026-10-28 | Final image builds successfully | No credentials |
+| Stage 2 runtime | evidence/test-results/02-runtime.txt | 2026-10-28 | Non-root, healthy, both endpoints pass; image ID and size recorded; test removed | Localhost only |
+| Stage 2 scan | evidence/test-results/02-trivy.json; 02-scan-summary.txt; 02-scan-before.txt | 2026-10-28 | Five fixable HIGH entries removed; 44 unpatched HIGH remain | Public package/image identifiers |
+| Stage 2 screenshot | evidence/screenshots/02-docker-running-and-scan.png | Pending | Missing | Capture runtime and summary |

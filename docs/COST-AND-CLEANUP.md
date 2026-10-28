@@ -5,3 +5,5 @@ No AWS resources created in this session. Account identity, region, free-tier/cr
 Before provisioning: obtain explicit approval for exact resources, region, expected charges, exposure and cleanup window; verify current pricing and account eligibility; configure budget/billing alerts. Alerts do not cap spending.
 
 The empty accidental Webforx directory remains untouched pending explicit cleanup confirmation.
+
+Stage 2: local Docker pulls/build/scan only; no AWS resources created. Temporary runtime containers removed by verification script. Local images and ignored .cache files retained for reproduction.

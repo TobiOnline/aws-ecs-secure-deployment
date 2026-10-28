@@ -1,28 +1,32 @@
 # Session state
 
 Date: 2026-10-28 (Africa/Lagos)
-Stage: 1 - PARTIAL (screenshot pending)
+Stage: 2 - PARTIAL (screenshot pending); Stages 0 and 1 COMPLETE.
 
 ## Verified
-- Baseline committed as ae4dec5; repository-local author identity configured as supplied by the user.
-- Created personal workspace /home/olawo/DevSecOps/aws-ecs-secure-deployment.
-- Preflight found the accidental Webforx directory empty; left untouched.
-- Git 2.53.0; Python 3.14.4; venv available; GitHub CLI 2.46.0.
-- GitHub CLI authentication verified as TobiOnline over SSH. Docker unavailable in Ubuntu; AWS CLI absent.
-- No AWS identity, region, credits or pricing verified. No AWS resources created.
+- Personal project: /home/olawo/DevSecOps/aws-ecs-secure-deployment.
+- Accidental Webforx directory absence verified; no content deleted.
+- Private origin: https://github.com/TobiOnline/aws-ecs-secure-deployment.git.
+- GitHub authenticated as TobiOnline; HTTPS pushes use gh credential helper.
+- Stage 0 and Stage 1 screenshots inspected and saved under evidence/screenshots/.
+- Host Python 3.14.4; Flask 3.1.3; Gunicorn 26.2.0; pytest 9.2.0. Six tests pass.
+- Docker 29.6.2 and Compose v5.3.1 available through Ubuntu WSL integration.
+- Container Python 3.14.10; base pinned in Dockerfile; non-root UID 10001.
+- Container health and HTTP checks pass with restricted runtime; temporary container removed.
+- Trivy 0.76.1 scan: five fixable HIGH entries removed with pip; 44 HIGH remain without listed fixes.
+- Full scan and residual-risk decisions in docs/SECURITY.md and evidence/test-results/02-*.
+- No AWS resources created; AWS account, region, credits and pricing unverified.
 
-## Blockers and incomplete work
-- User approved empty-directory cleanup; recheck found it already absent. Absence verified; no deletion performed.
-- Private GitHub repository created with approval; origin is https://github.com/TobiOnline/aws-ecs-secure-deployment.git. Main pushed and remote SHA verified at 344d706.
-- SSH push failed authentication; HTTPS with the GitHub CLI credential helper succeeded.
-- Stage 0 screenshot captured and inspected: evidence/screenshots/00-personal-workspace-and-git.png. Shows correct terminal path and matching local/remote commit 42d59c2; no credentials visible.
-- Docker integration and AWS CLI setup deferred to the relevant stages.
+## Pending
+- Stage 2 screenshot: evidence/screenshots/02-docker-running-and-scan.png.
+- AWS CLI unavailable in WSL at last check; AWS access setup required for Stage 3.
+- Cloud rollout requires current pricing, budget/credit verification, concrete approval and residual-risk disclosure.
+- Commit and push Stage 2 artifacts after diff review; record actual commit via Git history.
 
 ## Next action
-Capture evidence/screenshots/01-local-tests-health.png from tests and saved HTTP results. Enable Docker Desktop WSL integration for Ubuntu, then begin Stage 2. Batch clarification/approval questions where practical; user targets completion today.
-Stage 0 baseline, private origin, push, workspace resolution and screenshot evidence addressed. Screenshot includes VS Code's Webforx window title; the terminal explicitly shows the correct personal project directory.
+Capture Stage 2 runtime and scan summary in one terminal screenshot, then establish AWS
+access and prepare Stage 3 resource/cost approval. No provisioning yet.
 
-## Stage 1 validation
-- Flask 3.1.3, Gunicorn 26.2.0, pytest 9.2.0 installed into isolated .venv; all resolved dependencies pinned.
-- Six tests pass; pip check passes. Live Gunicorn / and /health returned HTTP 200; /missing returned JSON 404. Temporary localhost server stopped.
-- App, tests, verification script, dependency locks and README implemented. Screenshot pending; no cloud resources created.
+## Working preferences
+Batch questions and approvals where practical. Explain current stage, current activity
+and what it enables in plain language. User targets same-day progress; retain all acceptance gates.
