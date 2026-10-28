@@ -13,10 +13,11 @@ Stage: 0 - PARTIAL
 
 ## Blockers and incomplete work
 - User confirmation needed before removing the empty accidental directory.
-- Private repository creation approval pending: TobiOnline/aws-ecs-secure-deployment was not found; no origin configured.
+- Private GitHub repository created with approval; origin is https://github.com/TobiOnline/aws-ecs-secure-deployment.git. Main pushed and remote SHA verified at 344d706.
+- SSH push failed authentication; HTTPS with the GitHub CLI credential helper succeeded.
 - Milestone screenshot missing.
 - Docker integration and AWS CLI setup deferred to the relevant stages.
 
 ## Next action
-Obtain approval to create private TobiOnline/aws-ecs-secure-deployment, configure origin and push main.
+Capture Stage 0 screenshot and obtain confirmation before removing the empty accidental directory. Then proceed to Stage 1.
 Baseline commit reviewed and complete. Capture sanitized milestone evidence after the first push.
