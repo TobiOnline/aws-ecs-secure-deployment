@@ -12,12 +12,12 @@ Stage: 0 - PARTIAL
 - No AWS identity, region, credits or pricing verified. No AWS resources created.
 
 ## Blockers and incomplete work
-- User confirmation needed before removing the empty accidental directory.
+- User approved empty-directory cleanup; recheck found it already absent. Absence verified; no deletion performed.
 - Private GitHub repository created with approval; origin is https://github.com/TobiOnline/aws-ecs-secure-deployment.git. Main pushed and remote SHA verified at 344d706.
 - SSH push failed authentication; HTTPS with the GitHub CLI credential helper succeeded.
 - Milestone screenshot missing.
 - Docker integration and AWS CLI setup deferred to the relevant stages.
 
 ## Next action
-Capture Stage 0 screenshot and obtain confirmation before removing the empty accidental directory. Then proceed to Stage 1.
+Capture Stage 0 screenshot, then implement Stage 1 Flask app and tests. Batch clarification/approval questions where practical; user targets completion today.
 Baseline commit reviewed and complete. Capture sanitized milestone evidence after the first push.

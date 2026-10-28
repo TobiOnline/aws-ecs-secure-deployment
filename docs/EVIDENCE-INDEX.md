@@ -7,3 +7,5 @@
 | Stage 0 commit/push | Local baseline ae4dec5; remote main 344d706 | 2026-10-28 | Private repository and matching local/remote main verified | Inspect remote before sharing |
 
 Repository: https://github.com/TobiOnline/aws-ecs-secure-deployment (PRIVATE, verified 2026-10-28). Screenshot still missing.
+
+| Accidental-directory resolution | WSL test confirmed path absent (Codex command output) | 2026-10-28 | Already absent at cleanup recheck; no deletion needed | No secrets |
