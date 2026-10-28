@@ -17,4 +17,4 @@ Repository: https://github.com/TobiOnline/aws-ecs-secure-deployment (PRIVATE, ve
 | Stage 2 build | evidence/test-results/02-build.txt | 2026-10-28 | Final image builds successfully | No credentials |
 | Stage 2 runtime | evidence/test-results/02-runtime.txt | 2026-10-28 | Non-root, healthy, both endpoints pass; image ID and size recorded; test removed | Localhost only |
 | Stage 2 scan | evidence/test-results/02-trivy.json; 02-scan-summary.txt; 02-scan-before.txt | 2026-10-28 | Five fixable HIGH entries removed; 44 unpatched HIGH remain | Public package/image identifiers |
-| Stage 2 screenshot | evidence/screenshots/02-docker-running-and-scan.png | Pending | Missing | Capture runtime and summary |
+| Stage 2 screenshot | evidence/screenshots/02-docker-running-and-scan.png | 2026-10-28 | Non-root healthy container, successful endpoints and full severity counts visible | Inspected: no credentials |

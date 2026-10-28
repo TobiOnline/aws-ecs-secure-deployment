@@ -40,3 +40,5 @@ Application tests still pass (six). Saved build, runtime and scan evidence.
 Image ID and observed size are in 02-runtime.txt; screenshot pending.
 
 Next: capture Stage 2 screenshot, verify AWS access and prepare cost/resource approval.
+
+Stage 2 screenshot received and inspected; restricted runtime and severity summary visible. Saved evidence and marked Stage 2 complete with residual-risk documentation. User is new to AWS and reports possible USD 100 credits; credit balance/expiry/plan are not yet verified. Prioritize conserving credit and checking billing before resource creation.

@@ -1,7 +1,7 @@
 # Session state
 
 Date: 2026-10-28 (Africa/Lagos)
-Stage: 2 - PARTIAL (screenshot pending); Stages 0 and 1 COMPLETE.
+Stage: 3 - preflight; Stages 0, 1 and 2 COMPLETE.
 
 ## Verified
 - Personal project: /home/olawo/DevSecOps/aws-ecs-secure-deployment.
@@ -18,14 +18,13 @@ Stage: 2 - PARTIAL (screenshot pending); Stages 0 and 1 COMPLETE.
 - No AWS resources created; AWS account, region, credits and pricing unverified.
 
 ## Pending
-- Stage 2 screenshot: evidence/screenshots/02-docker-running-and-scan.png.
+- Stage 2 screenshot saved and inspected: evidence/screenshots/02-docker-running-and-scan.png.
 - AWS CLI unavailable in WSL at last check; AWS access setup required for Stage 3.
 - Cloud rollout requires current pricing, budget/credit verification, concrete approval and residual-risk disclosure.
-- Commit and push Stage 2 artifacts after diff review; record actual commit via Git history.
+- Stage 2 implementation pushed as fe709b0. User reports possible USD 100 credit; amount, expiry, account plan and eligibility remain unverified.
 
 ## Next action
-Capture Stage 2 runtime and scan summary in one terminal screenshot, then establish AWS
-access and prepare Stage 3 resource/cost approval. No provisioning yet.
+Help user verify AWS console access, plan, credit balance/expiry and existing charges; then select region and prepare concrete cost/resource approval. No provisioning yet.
 
 ## Working preferences
 Batch questions and approvals where practical. Explain current stage, current activity
