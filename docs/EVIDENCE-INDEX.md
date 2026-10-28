@@ -9,3 +9,7 @@
 Repository: https://github.com/TobiOnline/aws-ecs-secure-deployment (PRIVATE, verified 2026-10-28). Screenshot captured and inspected.
 
 | Accidental-directory resolution | WSL test confirmed path absent (Codex command output) | 2026-10-28 | Already absent at cleanup recheck; no deletion needed | No secrets |
+
+| Stage 1 tests | evidence/test-results/01-local-tests.txt | 2026-10-28 | pip check passed; 6 tests passed | No secrets |
+| Stage 1 live HTTP | evidence/test-results/01-live-http.txt; 01-gunicorn.log | 2026-10-28 | Gunicorn returned expected 200/200/404; stopped afterward | Localhost only; no secrets |
+| Stage 1 screenshot | evidence/screenshots/01-local-tests-health.png | Pending | Evidence missing | Capture terminal tests and HTTP transcript |

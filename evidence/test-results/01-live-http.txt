@@ -1,0 +1,4 @@
+Stage 1 live Gunicorn check; 2026-10-28; Python 3.14.4; localhost only
+GET / -> HTTP 200 {"service": "aws-ecs-secure-deployment", "status": "ok"}
+GET /health -> HTTP 200 {"status": "healthy"}
+GET /missing -> HTTP 404 {"error": "Not Found"}

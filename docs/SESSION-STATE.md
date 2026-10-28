@@ -1,7 +1,7 @@
 # Session state
 
 Date: 2026-10-28 (Africa/Lagos)
-Stage: 0 - COMPLETE; Stage 1 next
+Stage: 1 - PARTIAL (screenshot pending)
 
 ## Verified
 - Baseline committed as ae4dec5; repository-local author identity configured as supplied by the user.
@@ -19,5 +19,10 @@ Stage: 0 - COMPLETE; Stage 1 next
 - Docker integration and AWS CLI setup deferred to the relevant stages.
 
 ## Next action
-Implement Stage 1 Flask app and tests. Batch clarification/approval questions where practical; user targets completion today.
+Capture evidence/screenshots/01-local-tests-health.png from tests and saved HTTP results. Enable Docker Desktop WSL integration for Ubuntu, then begin Stage 2. Batch clarification/approval questions where practical; user targets completion today.
 Stage 0 baseline, private origin, push, workspace resolution and screenshot evidence addressed. Screenshot includes VS Code's Webforx window title; the terminal explicitly shows the correct personal project directory.
+
+## Stage 1 validation
+- Flask 3.1.3, Gunicorn 26.2.0, pytest 9.2.0 installed into isolated .venv; all resolved dependencies pinned.
+- Six tests pass; pip check passes. Live Gunicorn / and /health returned HTTP 200; /missing returned JSON 404. Temporary localhost server stopped.
+- App, tests, verification script, dependency locks and README implemented. Screenshot pending; no cloud resources created.
