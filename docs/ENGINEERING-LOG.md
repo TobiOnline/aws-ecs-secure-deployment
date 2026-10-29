@@ -98,3 +98,42 @@ Next batch: project-local Terraform installation with verified download, propose
 Stockholm architecture and local Terraform configuration/validation. Protect state/plan files
 from Git before generating them. Refresh scan and pricing, resolve credit/budget evidence,
 then request concrete IAM/provisioning approval before any cloud changes.
+
+## 2026-10-29 - Terraform and architecture preparation batch
+
+Installed Terraform 1.17.1 into ignored project-local .tools from official release;
+SHA256 matched official HTTPS checksums. Independent GPG signature verification not performed.
+AWS provider 6.71.0 installed with HashiCorp signature verification by Terraform;
+committed provider lockfile. Added ignores for tooling, state, plans, variable values and cache.
+
+Authored proposed foundation, optional service and optional GitHub OIDC Terraform in
+infrastructure/terraform. fmt and validate pass. Read-only foundation plan: 9 resources;
+illustrative full plan: 15. Full plan used a documentation IP and placeholder digest,
+not deployable inputs. Negative plan rejected enabled deployment without approved /32 and digest.
+No apply or AWS mutation. Raw plans stay ignored; address/action summaries are sanitized.
+
+Read-only network review found three default subnets, public IP mapping and an IGW default route.
+Exact selected-subnet effective route must be confirmed before apply.
+No existing GitHub provider found. ECS service-linked role absent; automatic creation by ECS
+must be included in foundation IAM approval; preserve if shared.
+
+Built Fargate-ready local image stage3: app-owned /app/runtime volume declared in Dockerfile.
+Gunicorn temporary files use it because Fargate does not support tmpfs. Read-only root,
+UID 10001, volume ownership, healthy endpoints and temporary-container cleanup verified.
+Local no-new-privileges remains a local check, not a claimed Fargate setting.
+Six app tests and dependency check pass. Fresh Trivy scan completed; 0 CRITICAL,
+44 HIGH, 58 MEDIUM, 61 LOW, 1 UNKNOWN; no fixable HIGH/CRITICAL entries.
+New dated evidence preserves all October 28 artifacts. Risk remains unresolved, not suppressed.
+
+Drafted architecture diagram, Terraform operation/state/teardown instructions and Stockholm costs.
+One task + IPv4 about USD 0.018575/hour at observed list rates; logs/storage/transfer extra.
+Proposed USD 1 project allowance has not been approved; credits, expiry, alert delivery and
+MFA console screenshots still missing. CI workflow itself remains unimplemented.
+
+CI owns later service task revisions; Terraform ignores that field after initial creation.
+Wildcard ECS task-registration permission is documented and region-restricted; remaining
+ECR/service/PassRole permissions scoped. OIDC trusts only repository main; branch-subject
+trust must be redesigned if a GitHub Environment is used.
+
+Next: capture local Terraform milestone evidence, obtain account credit/budget proof and
+concrete foundation/IAM approval. Replan with real reviewed inputs before applying.

@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-29",
+  "proposal": "full-proposal",
+  "applied": false,
+  "changes": [
+    {
+      "address": "aws_cloudwatch_log_group.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecr_lifecycle_policy.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecr_repository.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecs_cluster.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecs_service.app[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecs_task_definition.app[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_openid_connect_provider.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.execution",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.task",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role_policy.execution",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role_policy.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_security_group.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_vpc_security_group_egress_rule.https",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_vpc_security_group_ingress_rule.demo[0]",
+      "actions": [
+        "create"
+      ]
+    }
+  ],
+  "illustrative_inputs_only": true,
+  "warning": "No AWS resources created. Full proposal uses documentation-only client IP and a placeholder digest; not deployable approval evidence."
+}

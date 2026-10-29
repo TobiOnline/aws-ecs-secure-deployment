@@ -1,0 +1,144 @@
+[
+  {
+    "service": "AmazonECS",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/eu-north-1/index.json",
+    "publication_date": "2026-10-19T22:43:17Z",
+    "rates": [
+      {
+        "usage": "EUN1-Fargate-EphemeralStorage-GB-Hours",
+        "family": "Compute",
+        "unit": "GB-Hours",
+        "usd": "0.0001160000",
+        "description": "AWS Fargate - Ephemeral Storage - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-Fargate-vCPU-Hours:perCPU",
+        "family": "Compute",
+        "unit": "hours",
+        "usd": "0.0445000000",
+        "description": "AWS Fargate - vCPU  - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-Fargate-GB-Hours",
+        "family": "Compute",
+        "unit": "hours",
+        "usd": "0.0049000000",
+        "description": "AWS Fargate - Memory  - EU (Stockholm)"
+      }
+    ]
+  },
+  {
+    "service": "AmazonCloudWatch",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/eu-north-1/index.json",
+    "publication_date": "2026-10-07T11:55:40Z",
+    "rates": [
+      {
+        "usage": "EUN1-CW:CompositeAlarmMonitorUsage",
+        "family": "Alarm",
+        "unit": "Alarms",
+        "usd": "0.5000000000",
+        "description": "$0.50 per composite alarm month - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-CW:HighResAlarmMonitorUsage",
+        "family": "Alarm",
+        "unit": "Alarms",
+        "usd": "0.3000000000",
+        "description": "$0.30 per alarm metric month (high resolution) - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-TimedStorage-ByteHrs",
+        "family": "Storage Snapshot",
+        "unit": "GB-Mo",
+        "usd": "0.0280000000",
+        "description": "$0.028 per GB-mo of log storage - EU (Stockholm)"
+      },
+      {
+        "usage": "Global-CW:AlarmMonitorUsage",
+        "family": "Bundle",
+        "unit": "Alarms",
+        "usd": "0.0000000000",
+        "description": "Global"
+      },
+      {
+        "usage": "Global-DataProcessing-Bytes",
+        "family": "Bundle",
+        "unit": "GB",
+        "usd": "0.0000000000",
+        "description": "Global"
+      },
+      {
+        "usage": "Global-TimedStorage-ByteHrs",
+        "family": "Bundle",
+        "unit": "GB-Mo",
+        "usd": "0.0000000000",
+        "description": "Global"
+      },
+      {
+        "usage": "EUN1-CW:AlarmMonitorUsage",
+        "family": "Alarm",
+        "unit": "Alarms",
+        "usd": "0.1000000000",
+        "description": "$0.10 per alarm metric month (standard resolution) - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-CW:PromQLAlarmMonitorUsage",
+        "family": "Alarm",
+        "unit": "Alarms",
+        "usd": "0.1000000000",
+        "description": "$0.10 per Alarm in EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-DataProcessing-Bytes",
+        "family": "Data Payload",
+        "unit": "GB",
+        "usd": "0.5400000000",
+        "description": "$0.54 per GB custom log data ingested in Standard log class - EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-CW:LogAlarmMonitorUsage",
+        "family": "Alarm",
+        "unit": "Alarms",
+        "usd": "0.1000000000",
+        "description": "$0.10 per Alarm in EU (Stockholm)"
+      }
+    ]
+  },
+  {
+    "service": "AmazonECR",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECR/current/eu-north-1/index.json",
+    "publication_date": "2026-09-11T12:44:25Z",
+    "rates": [
+      {
+        "usage": "EUN1-TimedStorage-Archive-ByteHrs",
+        "unit": "GB-Mo",
+        "usd": "0.1000000000",
+        "description": "$0.10 per GB-Mo from 0 to 153,600 for TimedStorage-Archive-ByteHrs in EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-TimedStorage-Archive-ByteHrs",
+        "unit": "GB-Mo",
+        "usd": "0.0700000000",
+        "description": "$0.07 per GB-Mo from 153,600 for TimedStorage-Archive-ByteHrs in EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-TimedStorage-ByteHrs",
+        "unit": "GB-Mo",
+        "usd": "0.1000000000",
+        "description": "USD 0.1 per GB-Mo for TimedStorage-ByteHrs in EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-Retrieval-Archive",
+        "unit": "GB",
+        "usd": "0.0300000000",
+        "description": "$0.03 per GB for Retrieval-Archive in EU (Stockholm)"
+      },
+      {
+        "usage": "EUN1-AsyncActions-ImageSigning",
+        "unit": "Count",
+        "usd": "0.0200000000",
+        "description": "$0.02 per Count for AsyncActions-ImageSigning in EU (Stockholm)"
+      }
+    ]
+  }
+]

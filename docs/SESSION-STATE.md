@@ -78,3 +78,40 @@ No Terraform apply, IAM mutation or cloud provisioning is authorized by this aud
 Audit evidence: evidence/commands/2026-10-29-project-audit.json.
 Docs changed in this batch: README plus engineering log, roadmap, session state, evidence index,
 security and cost/cleanup appendices. Commit/push status is verified in Git at batch close.
+
+## 2026-10-29 Terraform batch - latest handoff
+
+Stage 3 remains PARTIAL; original MVP ratio remains 29%. No cloud apply or IAM mutation.
+Terraform now installed at .tools/terraform (1.17.1), SHA256 verified from official HTTPS
+checksums; independent GPG signature not verified. AWS provider 6.71.0 lockfile recorded.
+Configuration under infrastructure/terraform passes fmt/validate.
+Foundation plan: 9 Terraform creates. Full illustrative plan: 15 creates, placeholder inputs.
+Missing-input negative plan correctly rejected deployment. Raw plans/logs ignored in .cache.
+
+No existing GitHub OIDC provider; AWSServiceRoleForECS absent.
+Default VPC has three default subnets with public-IP mapping; IGW default route observed.
+Verify selected subnet's exact effective route before apply.
+Potential automatic ECS service-linked-role creation requires inclusion in IAM approval.
+
+Image aws-ecs-secure-deployment:stage3 built and tested: app-owned /app/runtime volume,
+read-only root, non-root UID, both HTTP endpoints healthy; test container/volume removed.
+Fresh dated Trivy findings unchanged: 44 HIGH with no listed fix; no CRITICAL/fixable HIGH.
+Current implementation scripts default to stage3 and preserve dated scan evidence.
+Historical October 28 files unchanged. Container local hardening is not identical to Fargate.
+
+Proposed architecture/costs and operating/teardown instructions are reviewable.
+Task+IP list cost about USD 0.018575 per task-hour; storage/logs/transfer extra.
+Proposed USD 1 total project usage allowance NOT approved; current credit/expiry and billing
+evidence still missing. No GitHub workflow authored or triggered.
+
+Next batch depends on grouped user response:
+- Supply redacted current credits/expiry/plan and budget threshold evidence.
+- Approve a concrete spending allowance and the 9-resource foundation plus automatic ECS
+  service-linked-role prerequisite; no public task or GitHub trust in that first phase.
+- Capture Terraform version/validation/plan-summary screenshot at proposed
+  evidence/screenshots/03f-terraform-validation.png (MISSING).
+Then replan/check selected route and apply only the approved phase; publish versioned
+image only after approval. GitHub OIDC and actual service rollout need reviewed approval later.
+Current changed scope: Terraform, Docker runtime adaptation, repeatable scan utilities,
+architecture/cost/security/handoff docs, new dated build/runtime/scan/plan evidence.
+Git commit and push verified at batch close.

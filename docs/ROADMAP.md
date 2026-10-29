@@ -39,3 +39,20 @@ Terraform is a newly requested requirement and is not counted as already complet
 
 At each meaningful checkpoint update engineering log, evidence index and session state.
 No apply, IAM changes, paid resources or destructive cleanup without the user's explicit approval.
+
+## 2026-10-29 implementation batch update
+
+- [x] Terraform 1.17.1 project-local install and official checksum verification.
+- [x] AWS provider 6.71.0 signature-verified by Terraform, lockfile recorded.
+- [x] Local state/tool/plan/input ignore rules added.
+- [~] Architecture, cost and IAM proposal authored; approval and selected-route check pending.
+- [~] Terraform foundation/service/OIDC authored; fmt/validate and read-only plans pass; not applied.
+- [x] Negative guard plan rejects missing digest/operator /32.
+- [x] Fargate-compatible volume adaptation builds and runs; fresh image scan recorded.
+- [ ] Terraform milestone screenshot evidence.
+- [ ] Credit/expiry/budget alert evidence and spend allowance approval.
+- [ ] Foundation/IAM approval and apply, actual ECR push/digest, service approval and rollout.
+- [ ] CI/CD workflows, monitoring incident/rollback, end-to-end delivery and final teardown/release.
+
+MVP ratio remains 2/7 (29% rounded): prepared infrastructure is not deployed infrastructure.
+Earlier pending tool-install items are now complete; Terraform deployment remains incomplete.

@@ -5,7 +5,7 @@ import sys
 import time
 import urllib.request
 
-image = sys.argv[1] if len(sys.argv) > 1 else "aws-ecs-secure-deployment:stage2"
+image = sys.argv[1] if len(sys.argv) > 1 else "aws-ecs-secure-deployment:stage3"
 def docker(*args):
     return subprocess.check_output(["docker", *args], text=True).strip()
 
@@ -18,7 +18,7 @@ print("Configured non-root user:", metadata["Config"]["User"], flush=True)
 container = docker(
     "run", "-d", "--read-only", "--cap-drop=ALL",
     "--security-opt=no-new-privileges:true", "--pids-limit=100",
-    "--memory=128m", "--cpus=0.5", "--tmpfs", "/tmp:rw,noexec,nosuid,size=32m",
+    "--memory=128m", "--cpus=0.5",
     "-p", "127.0.0.1::8000", image,
 )
 try:
@@ -34,6 +34,9 @@ try:
         raise RuntimeError("Container never became healthy")
     print("Container health: healthy", flush=True)
     print("Runtime UID:", docker("exec", container, "id", "-u"), flush=True)
+    owner = docker("exec", container, "stat", "-c", "%u:%g", "/app/runtime")
+    assert owner == "10001:10001"
+    print("Task-style writable volume owner:", owner, flush=True)
     assert docker("exec", container, "id", "-u") == "10001"
     for path, expected in [("/", {"service": "aws-ecs-secure-deployment", "status": "ok"}), ("/health", {"status": "healthy"})]:
         with urllib.request.urlopen("http://" + endpoint + path, timeout=3) as response:
@@ -42,5 +45,5 @@ try:
             print(f"GET {path} -> HTTP {response.status} {json.dumps(body, sort_keys=True)}", flush=True)
     print("Read-only root filesystem; all capabilities dropped; no new privileges.", flush=True)
 finally:
-    docker("rm", "-f", container)
+    docker("rm", "-fv", container)
     print("Temporary test container removed.", flush=True)

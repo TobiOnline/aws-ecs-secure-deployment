@@ -1,0 +1,6 @@
+# Example only; no real resource identifiers, IP or credentials.
+region             = "eu-north-1"
+enable_deployment  = false
+enable_github_oidc = false
+# image_digest     = "sha256:<verified ECR image digest>"
+# demo_client_cidr = "<approved operator IPv4>/32"

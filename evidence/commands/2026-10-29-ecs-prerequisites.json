@@ -1,0 +1,9 @@
+{
+  "ecs_service_linked_role": "absent",
+  "existing_github_oidc_providers": 0,
+  "default_subnets": 3,
+  "subnet_public_ip_mapping": true,
+  "internet_gateway_default_route_observed": true,
+  "exact_selected_subnet_route_check": "required before apply",
+  "aws_changes": false
+}

@@ -1,0 +1,83 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.32kB 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#2 DONE 3.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 100B 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 96B 0.0s done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#6 resolve docker.io/library/python@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8 0.1s done
+#6 DONE 0.1s
+
+#7 [2/5] WORKDIR /app
+#7 CACHED
+
+#8 [3/5] COPY requirements.txt .
+#8 CACHED
+
+#9 [4/5] RUN python -m pip install --no-cache-dir -r requirements.txt     && python -m pip uninstall --yes pip     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app     && mkdir /app/runtime     && chown 10001:10001 /app/runtime
+#9 7.870 Collecting blinker==1.9.0 (from -r requirements.txt (line 2))
+#9 8.779   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 9.131 Collecting click==8.5.0 (from -r requirements.txt (line 3))
+#9 9.424   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#9 9.757 Collecting Flask==3.1.3 (from -r requirements.txt (line 4))
+#9 10.05   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+#9 10.42 Collecting gunicorn==26.2.0 (from -r requirements.txt (line 5))
+#9 10.71   Downloading gunicorn-26.2.0-py3-none-any.whl.metadata (5.5 kB)
+#9 11.01 Collecting itsdangerous==2.2.0 (from -r requirements.txt (line 6))
+#9 11.30   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 11.63 Collecting Jinja2==3.1.6 (from -r requirements.txt (line 7))
+#9 11.92   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 12.87 Collecting MarkupSafe==3.0.4 (from -r requirements.txt (line 8))
+#9 13.16   Downloading markupsafe-3.0.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 13.47 Collecting Werkzeug==3.1.9 (from -r requirements.txt (line 9))
+#9 13.76   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+#9 14.07 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 14.39 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 15.30 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#9 15.66 Downloading gunicorn-26.2.0-py3-none-any.whl (228 kB)
+#9 16.37 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 16.68 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 17.06 Downloading markupsafe-3.0.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+#9 17.36 Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+#9 17.76 Installing collected packages: MarkupSafe, itsdangerous, gunicorn, click, blinker, Werkzeug, Jinja2, Flask
+#9 19.36
+#9 19.37 Successfully installed Flask-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Werkzeug-3.1.9 blinker-1.9.0 click-8.5.0 gunicorn-26.2.0 itsdangerous-2.2.0
+#9 19.37 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 22.79 Found existing installation: pip 26.2.2
+#9 22.90 Uninstalling pip-26.2.2:
+#9 23.71   Successfully uninstalled pip-26.2.2
+#9 23.74 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 DONE 24.3s
+
+#10 [5/5] COPY app/ ./app/
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.9s done
+#11 exporting manifest sha256:0520f80f6ffe9053144d6bdb0555f66407e82de1586c5a71e37150cb1f03dbe4 0.0s done
+#11 exporting config sha256:44f3db70f3035ec1f71522abf6d7fdc9c4b8cd29ba43d53fd47ec4c36be1d6d1 0.0s done
+#11 exporting attestation manifest sha256:87300252137ffadac5f48844a748885a617ec9a5bbdb1b605ba5e02880c10575
+#11 exporting attestation manifest sha256:87300252137ffadac5f48844a748885a617ec9a5bbdb1b605ba5e02880c10575 0.1s done
+#11 exporting manifest list sha256:6c34f20dcc13faeb3fe893f64536086ec38d3a2007030798a6069e40d875e672 0.0s done
+#11 naming to docker.io/library/aws-ecs-secure-deployment:stage3 done
+#11 unpacking to docker.io/library/aws-ecs-secure-deployment:stage3
+#11 unpacking to docker.io/library/aws-ecs-secure-deployment:stage3 0.3s done
+#11 DONE 1.5s

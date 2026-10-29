@@ -54,3 +54,24 @@ Refresh before cloud rollout and document the risk decision.
 
 Terraform state, plans and provider/CLI caches must be excluded from Git before use.
 Commit reproducibility lockfiles as appropriate, never credentials or secret variable values.
+
+## 2026-10-29 Terraform proposal and refreshed image review
+
+No IAM changes applied. Proposed execution role scoped to this ECR/log group; task role
+has no policies; optional OIDC role trusts only this repository's main branch and AWS audience.
+No static AWS keys or credential files. RegisterTaskDefinition wildcard resource is unavoidable
+for that API and region-limited; other resource/PassRole permissions scoped. Review trust and
+workflow dispatch gates together before enabling; no Environment-based claim currently used.
+
+State/plans/tooling/tfvars excluded from Git; provider lock committed. Local state requires
+secure backup. Raw plans can contain account IDs and are not shareable evidence.
+ECS service-linked role is absent and may be auto-created by initial ECS use; include it in
+approval and do not delete if shared.
+
+Fargate volume ownership seeded from Dockerfile VOLUME /app/runtime and checked locally.
+Read-only root and dropped capabilities configured; local no-new-privileges/tmpfs do not
+translate to Fargate. No production-ready or identical-hardening claim.
+
+Fresh scan dated October 29 retains 44 HIGH/58 MEDIUM/61 LOW/1 UNKNOWN, no CRITICAL or
+fixable HIGH/CRITICAL findings. Full report preserved; risk not resolved. Operator /32 only,
+temporary access, no sensitive payload and explicit risk acknowledgment required before rollout.

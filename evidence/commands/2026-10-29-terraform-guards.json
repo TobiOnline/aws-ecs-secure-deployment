@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-29",
+  "negative_deployment_guard_test": true,
+  "expected": "plan rejected when deployment enabled without image digest and approved client CIDR",
+  "exit_code": 1,
+  "applied": false
+}

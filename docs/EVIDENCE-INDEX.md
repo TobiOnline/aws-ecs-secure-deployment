@@ -45,3 +45,25 @@ scan linkage to the current local image. Existing PNGs match the screenshots rev
 
 MFA/plan/initial credit statements are user-reported until suitable evidence is saved or verified.
 No missing screenshot was created or marked as captured by this audit.
+
+## 2026-10-29 Terraform preparation evidence
+
+| Evidence | Result |
+|---|---|
+| evidence/commands/2026-10-29-terraform-install.json | Terraform version, official source/checksum; independent GPG not verified |
+| infrastructure/terraform/.terraform.lock.hcl | AWS provider 6.71.0 and integrity hashes |
+| evidence/test-results/2026-10-29-terraform-validation.txt | Final configuration validates |
+| evidence/commands/2026-10-29-foundation-plan.json | 9 proposed Terraform creates; no apply |
+| evidence/commands/2026-10-29-full-proposal-plan.json | 15 proposed creates; documentation-only IP/digest; no apply |
+| evidence/commands/2026-10-29-terraform-guards.json | Missing-input deployment rejected |
+| evidence/commands/2026-10-29-ecs-prerequisites.json | No GitHub provider; service-linked role absent; limited network facts |
+| evidence/commands/2026-10-29-stockholm-pricing.json | Official ECS/ECR/CloudWatch regional price-list data |
+| evidence/test-results/2026-10-29-container-build.txt | Fargate-ready image build succeeds |
+| evidence/test-results/2026-10-29-container-runtime.txt | Healthy/non-root/read-only; app-owned runtime volume verified |
+| evidence/test-results/2026-10-29-local-tests.txt | Six tests and dependency check pass |
+| evidence/test-results/2026-10-29-trivy.json | Fresh full report; 44 HIGH remain |
+| evidence/test-results/2026-10-29-scan-summary.txt | Severity counts and fixable gate result |
+| evidence/screenshots/03f-terraform-validation.png | MISSING - proposed filename only |
+
+No raw Terraform plan, AWS credentials, account IDs or real operator IP saved in shareable
+plan evidence. AWS account setup screenshots listed above remain MISSING.

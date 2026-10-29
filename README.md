@@ -6,7 +6,7 @@ Personal DevSecOps portfolio project: build, secure, deploy, monitor and tear do
 Stages 0-2 complete with local screenshots and runtime/scan evidence. AWS CLI/SSO and Stockholm inventory verified on October 29; Stage 3 is partial. No project workload deployed. See docs/SESSION-STATE.md for the current dated handoff and docs/SECURITY.md for remaining image findings.
 
 ## Scope
-Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request; installation and infrastructure implementation remain pending.
+Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request. Version 1.17.1 is installed locally and the proposed configuration is validated; no infrastructure has been applied.
 
 See docs/SESSION-STATE.md for the verified handoff and docs/ROADMAP.md for acceptance gates.
 
@@ -43,14 +43,14 @@ Pins provide repeatable version selection; vulnerability review remains a separa
 Docker Desktop WSL integration must be enabled for Ubuntu.
 
 ```bash
-docker build -t aws-ecs-secure-deployment:stage2 .
+docker build -t aws-ecs-secure-deployment:stage3 .
 python3 scripts/verify-container.py
 bash scripts/scan-image.sh
 ```
 
 The verification script starts a temporary container bound only to localhost, checks health,
 UID 10001 and both endpoints, then removes the container. It tests a read-only filesystem,
-dropped Linux capabilities and no-new-privileges. Those runtime settings must also be
+dropped Linux capabilities and no-new-privileges. An app-owned runtime volume is checked locally to prepare for Fargate. Those runtime settings must also be
 applied explicitly in future deployments; the Dockerfile alone does not enforce them.
 The image exposes port 8000, logs to stdout/stderr and runs Gunicorn with one worker.
 
@@ -63,3 +63,6 @@ The scan uses the official Trivy image pinned in .trivy-image. It scans an expor
 without Docker-socket access. Large image archives and vulnerability DB cache remain ignored
 under .cache/. The gate fails on fixable HIGH/CRITICAL findings; a passing gate does not
 mean there are no vulnerabilities. Review the full report and security notes before deployment.
+
+## Proposed infrastructure
+See [architecture](docs/ARCHITECTURE.md) and [Terraform instructions](infrastructure/terraform/README.md). Run bash scripts/verify-infrastructure.sh for local validation. Terraform state, plans and tooling are ignored; .terraform.lock.hcl is committed. Infrastructure, GitHub OIDC and deployment remain proposals awaiting explicit approval.

@@ -10,3 +10,14 @@ __pycache__/
 *.key
 
 .cache/
+
+# Local tooling and Terraform sensitive/generated files
+.tools/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
