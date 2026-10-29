@@ -39,7 +39,7 @@ for key in ["AWS_PROFILE", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_SE
 repo = "TobiOnline/aws-ecs-secure-deployment"
 token = subprocess.check_output(["gh", "api", "-X", "POST", "repos/" + repo + "/actions/runners/registration-token", "--jq", ".token"], text=True).strip()
 with (root / ".cache/runner-config.log").open("w") as out:
-    configured = subprocess.run([str(runner / "bin/Runner.Listener"), "configure", "--url", "https://github.com/" + repo, "--token", token, "--name", "ecs-demo-" + str(int(time.time())), "--labels", "ecs-demo", "--unattended", "--ephemeral", "--disableupdate"], cwd=runner, env=env, stdout=out, stderr=subprocess.STDOUT, check=False)
+    configured = subprocess.run([str(runner / "bin/Runner.Listener"), "configure", "--url", "https://github.com/" + repo, "--token", token, "--name", "ecs-demo-" + str(int(time.time())), "--labels", "ecs-demo", "--work", "_work-" + str(int(time.time())), "--unattended", "--ephemeral", "--disableupdate"], cwd=runner, env=env, stdout=out, stderr=subprocess.STDOUT, check=False)
 del token
 if configured.returncode:
     raise SystemExit("Runner configuration failed; inspect private .cache/runner-config.log")
