@@ -180,3 +180,6 @@ CI on ephemeral local runner, apply refreshed approved remaining plan, verify/re
 promptly clean up project-only resources. State and ignored raw plans must be preserved.
 Screenshot/evidence collection still required; no cloud milestone claimed fully complete yet.
 Local commits ahead of origin; push unavailable until workflow permission refresh.
+
+## 2026-10-29 live demo in progress - latest
+All remaining demo/fault/teardown permissions explicitly approved, with under-USD-1 actual-charge target and residual 44-HIGH risk accepted for this temporary demo. GitHub workflow-scope refresh complete; commits through 65f4146 pushed. Real failing workflow 40862041799 proves test failure skips credentials/build/delivery. OIDC provider and scoped role/policy now applied, no static AWS keys; GitHub role secret configured. Passing publication workflow 40862493388 running on ephemeral local runner. No Fargate app service yet. Next: verify passing OIDC publication, apply reviewed remaining four service/ingress/alarm resources, collect health/log evidence, run controlled bad rollout/recovery, demonstrate CI task revision delivery, then promptly execute approved project cleanup. Preserve local Terraform state until post-cleanup inventory. Automatic screenshot path stopped at browser URL-policy boundary; mark missing, request user captures without delaying teardown.

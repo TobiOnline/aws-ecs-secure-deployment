@@ -202,3 +202,6 @@ Prepared guarded evidence/recovery/cleanup scripts; not executed. Current remain
 plan includes seven creates: OIDC provider/role/policy, task definition, service, /32 ingress,
 CPU alarm. Full demo/failure/teardown approval requested in one batch, still pending.
 No Fargate tasks running. Latest source/evidence/docs committed locally; push blocked by scope.
+
+## 2026-10-29 - Final demo authorization and real CI gate
+User completed GitHub workflow-scope refresh and explicitly approved all remaining seven resources, temporary local runner, 44-HIGH residual risk for this short demo, reversible failure/rollback and project-only teardown. Default VPC/Identity Center/shared service roles preserved. Commits pushed successfully. Deliberate-failure workflow 40862041799 failed at Tests; all later build/credential/delivery steps skipped. Ephemeral runner deregistered after job. Approved OIDC provider/role/policy applied separately while deployment disabled; role ARN configured as GitHub secret, no static AWS keys. Passing OIDC publication workflow 40862493388 in progress. Browser screenshot automation stopped because current URL could not be established safely; no further UI input attempted. Screenshots remain missing.

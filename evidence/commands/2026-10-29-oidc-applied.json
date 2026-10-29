@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-29",
+  "region": "eu-north-1",
+  "created": [
+    "aws_iam_openid_connect_provider.github[0]",
+    "aws_iam_role.github[0]",
+    "aws_iam_role_policy.github[0]"
+  ],
+  "trust": "TobiOnline/aws-ecs-secure-deployment main only; sts.amazonaws.com audience",
+  "github_role_configured_as_secret": true,
+  "aws_static_keys_stored": false,
+  "app_task_running": false
+}

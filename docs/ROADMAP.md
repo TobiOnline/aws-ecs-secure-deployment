@@ -92,3 +92,11 @@ Foundation/IAM scope remains approved; no cloud changes made.
 - [ ] Explicit remaining seven-resource demo/recovery/cleanup approval.
 - [ ] Actual passing/failing GitHub runs, OIDC delivery, deployment, recovery and cleanup evidence.
 Native ECR scan is unsupported for this image; local Trivy remains required.
+
+### 2026-10-29 real CI progress
+- [x] Remaining full demo/fault/cleanup approval and GitHub workflow scope obtained.
+- [x] Intentional failing workflow proves later delivery steps skipped (40862041799).
+- [x] Approved main-only GitHub OIDC access applied; static AWS keys absent.
+- [~] Passing workflow 40862493388 running; app deployment still disabled.
+- [ ] Service/ingress/alarm deployment, live checks, recovery, CI revision delivery and approved teardown.
+- [ ] Actual ECR/CI/deployment/cleanup screenshots; browser automation blocked by URL-confidence safety check.

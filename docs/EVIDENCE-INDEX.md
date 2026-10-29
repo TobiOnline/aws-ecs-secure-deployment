@@ -110,3 +110,12 @@ UnsupportedImageTypeException; no native findings/pass claimed.
 Remaining plan evidence now lists seven creates, adding the CPU alarm.
 Workflow execution evidence absent: push blocked by missing OAuth workflow scope.
 No deployment, recovery or teardown screenshots captured yet.
+
+### 2026-10-29 real CI and IAM evidence
+| Evidence | Result |
+|---|---|
+| evidence/commands/2026-10-29-ci-deliberate-failure.json | Real workflow 40862041799 fails at Tests; build/credentials/delivery skipped |
+| evidence/commands/2026-10-29-oidc-applied.json | Scoped main-only provider/role/policy applied; role identifier configured without static keys |
+| Passing workflow 40862493388 | In progress, not yet counted as passing |
+
+Screenshot automation attempted but stopped safely at browser URL-confidence boundary. No screenshot fabricated or saved from that attempt.
