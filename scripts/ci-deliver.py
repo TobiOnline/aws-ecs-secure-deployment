@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
@@ -31,7 +32,17 @@ with tempfile.TemporaryDirectory(prefix="docker-oidc-", dir=root / ".cache") as 
 digest = aws("ecr", "describe-images", "--repository-name", "aws-ecs-secure-deployment", "--image-ids", "imageTag=" + tag)["imageDetails"][0]["imageDigest"]
 print("Published tag:", tag, "digest:", digest)
 if os.environ.get("APPROVED_DEPLOY") == "true":
-    task = aws("ecs", "describe-task-definition", "--task-definition", "aws-ecs-secure-deployment")["taskDefinition"]
+    for _ in range(20):
+        service = aws("ecs", "describe-services", "--cluster", "aws-ecs-secure-deployment", "--services", "aws-ecs-secure-deployment")["services"][0]
+        primary = next(item for item in service["deployments"] if item["status"] == "PRIMARY")
+        if primary.get("rolloutState") == "COMPLETED":
+            break
+        time.sleep(15)
+    else:
+        raise SystemExit("Existing rollout is not stable; refusing to interrupt it")
+    # Use the active healthy revision, not the latest registered family revision:
+    # the latest registration may be a failed release being rolled back.
+    task = aws("ecs", "describe-task-definition", "--task-definition", service["taskDefinition"])["taskDefinition"]
     allowed = {"family", "taskRoleArn", "executionRoleArn", "networkMode", "containerDefinitions", "volumes", "placementConstraints", "requiresCompatibilities", "cpu", "memory", "runtimePlatform", "ephemeralStorage"}
     task = {key: value for key, value in task.items() if key in allowed}
     task["containerDefinitions"][0]["image"] = repo["repositoryUri"] + "@" + digest
