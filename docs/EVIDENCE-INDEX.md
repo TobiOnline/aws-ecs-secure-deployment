@@ -119,3 +119,6 @@ No deployment, recovery or teardown screenshots captured yet.
 | Passing workflow 40862493388 | In progress, not yet counted as passing |
 
 Screenshot automation attempted but stopped safely at browser URL-confidence boundary. No screenshot fabricated or saved from that attempt.
+
+| evidence/commands/2026-10-29-ci-oidc-trust-failure.json | Saved first passing-run attempt failure; all checks passed, AWS credentials denied |
+| evidence/commands/2026-10-29-oidc-subject-correction.json | Verified immutable repo/main subject and one scoped role-trust correction applied |

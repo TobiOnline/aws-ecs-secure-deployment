@@ -75,3 +75,6 @@ translate to Fargate. No production-ready or identical-hardening claim.
 Fresh scan dated October 29 retains 44 HIGH/58 MEDIUM/61 LOW/1 UNKNOWN, no CRITICAL or
 fixable HIGH/CRITICAL findings. Full report preserved; risk not resolved. Operator /32 only,
 temporary access, no sensitive payload and explicit risk acknowledgment required before rollout.
+
+### 2026-10-29 immutable GitHub subject correction
+Repository uses immutable default subject from GitHub API, confirmed by STS CloudTrail. Legacy name-only condition denied assumption. Role trust now matches the exact owner/repository IDs and main ref, with sts.amazonaws.com audience. No wildcard or broader repo/ref granted. Source: https://docs.github.com/en/actions/reference/security/oidc .

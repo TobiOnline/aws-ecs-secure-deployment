@@ -100,3 +100,5 @@ Native ECR scan is unsupported for this image; local Trivy remains required.
 - [~] Passing workflow 40862493388 running; app deployment still disabled.
 - [ ] Service/ingress/alarm deployment, live checks, recovery, CI revision delivery and approved teardown.
 - [ ] Actual ECR/CI/deployment/cleanup screenshots; browser automation blocked by URL-confidence safety check.
+
+- [x] Diagnose actual OIDC failure and apply exact immutable repo/main trust correction; successful rerun still pending.

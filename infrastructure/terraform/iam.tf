@@ -53,7 +53,7 @@ resource "aws_iam_role" "github" {
       Condition = {
         StringEquals = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
-          "token.actions.githubusercontent.com:sub" = "repo:TobiOnline/aws-ecs-secure-deployment:ref:refs/heads/main"
+          "token.actions.githubusercontent.com:sub" = "repo:TobiOnline@89221982/aws-ecs-secure-deployment@1437115174:ref:refs/heads/main"
         }
       }
     }]

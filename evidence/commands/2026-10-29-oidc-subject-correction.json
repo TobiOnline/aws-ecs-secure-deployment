@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-29",
+  "cause": "Legacy sub did not match immutable new-repository subject",
+  "actual_subject": "repo:TobiOnline@89221982/aws-ecs-secure-deployment@1437115174:ref:refs/heads/main",
+  "source": "GitHub OIDC configuration and sanitized STS CloudTrail identity",
+  "changed": "Exact main-only trust condition updated; no wildcard expansion",
+  "applied": true
+}
