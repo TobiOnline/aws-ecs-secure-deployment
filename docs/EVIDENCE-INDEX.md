@@ -74,3 +74,16 @@ plan evidence. AWS account setup screenshots listed above remain MISSING.
 | evidence/screenshots/03f-terraform-validation.png | SAVED and visually inspected | Terraform 1.17.1, correct personal path and successful configuration validation; no credentials visible |
 
 This supersedes the earlier MISSING entry for 03f only. Other AWS screenshots remain missing.
+
+### 2026-10-29 redacted AWS billing evidence
+| Path | Status | What it proves / limits |
+|---|---|---|
+| evidence/screenshots/03c-aws-credits-and-expiry.png | Saved, redacted, visually checked | Summary balance shown; both credit rows Expired October 28; usable credit NOT verified; plan not shown |
+| evidence/screenshots/03d-aws-budget-overview.png | Saved, redacted, visually checked | USD 1 budget, Healthy and OK; exact alert threshold not shown |
+| evidence/screenshots/03g-aws-october-bill.png | Saved, redacted, visually checked | October 2026 estimated bill USD 0.00, Pending; not final cost |
+| evidence/commands/2026-10-29-screenshot-redactions.json | Saved | Source/output hashes, redaction rectangles, unchanged-outside-mask verification |
+
+Earlier proposed credits-plan/budget-alert filenames remain unsaved; these actual captures
+partially fulfill those evidence needs, without claiming plan/threshold verification.
+User authorized opaque redaction; account/credit identifiers and profile picture concealed.
+Originals retained outside Git; amount/date/status pixels preserved.

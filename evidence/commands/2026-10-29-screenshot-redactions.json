@@ -1,0 +1,95 @@
+[
+  {
+    "file": "03g-aws-october-bill.png",
+    "dimensions": [
+      1365,
+      721
+    ],
+    "source_sha256": "b6d40acc5e3dcc7e041e6a0636316073ee9dfb096248e83b4a8a986a3cae96a3",
+    "redacted_sha256": "0687b3583a14efaf34458571653d43416d99db46df8e1c28729dda51c1b853f7",
+    "redaction_rectangles_xyxy": [
+      [
+        1184,
+        88,
+        1345,
+        135
+      ],
+      [
+        1290,
+        44,
+        1326,
+        80
+      ],
+      [
+        318,
+        391,
+        470,
+        419
+      ]
+    ],
+    "unchanged_outside_redactions": true,
+    "method": "Opaque pixel rectangles; no generative editing; original preserved"
+  },
+  {
+    "file": "03d-aws-budget-overview.png",
+    "dimensions": [
+      1365,
+      682
+    ],
+    "source_sha256": "2babe584de090d7c3448c89018eb8e655672a82d1f09e5538b3e61a25af7692d",
+    "redacted_sha256": "b655ac96026a453c67dd646b004303939e8608ee5c5317339f71d035fba42a16",
+    "redaction_rectangles_xyxy": [
+      [
+        1198,
+        88,
+        1354,
+        135
+      ],
+      [
+        1290,
+        44,
+        1326,
+        80
+      ]
+    ],
+    "unchanged_outside_redactions": true,
+    "method": "Opaque pixel rectangles; no generative editing; original preserved"
+  },
+  {
+    "file": "03c-aws-credits-and-expiry.png",
+    "dimensions": [
+      1361,
+      710
+    ],
+    "source_sha256": "d119e5616d3bf2931d8e3d33c8825b6d7537fb03ef1ed7e94ba113658821379a",
+    "redacted_sha256": "13b804f420273de9dd54021f3f012afdf35ec45990cb36911afb5de49efc41b6",
+    "redaction_rectangles_xyxy": [
+      [
+        1182,
+        78,
+        1342,
+        126
+      ],
+      [
+        1290,
+        31,
+        1326,
+        69
+      ],
+      [
+        39,
+        599,
+        150,
+        666
+      ],
+      [
+        550,
+        599,
+        677,
+        666
+      ]
+    ],
+    "unchanged_outside_redactions": true,
+    "method": "Opaque pixel rectangles; no generative editing; original preserved"
+  }
+]

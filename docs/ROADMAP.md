@@ -61,3 +61,11 @@ Earlier pending tool-install items are now complete; Terraform deployment remain
 - [x] Terraform milestone screenshot saved and inspected: evidence/screenshots/03f-terraform-validation.png.
 - [ ] Current credit/expiry/plan and budget threshold evidence.
 - [ ] Explicit project spending allowance and foundation/IAM provisioning approval.
+
+### 2026-10-29 billing evidence and permissions update
+- [x] User approved USD 1 total project usage allowance and the described foundation/IAM scope.
+- [x] Redacted credits, budget overview and October bill screenshots saved and inspected.
+- [ ] Resolve credits discrepancy: summary balance versus both rows marked Expired.
+- [ ] Capture/verify actual budget notification threshold and account plan.
+- [ ] Proceed with approved foundation only after billing readiness is resolved and plan refreshed.
+No OIDC/public-service/destructive approval inferred.

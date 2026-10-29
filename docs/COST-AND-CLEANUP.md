@@ -80,3 +80,14 @@ Sources:
 - https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECR/current/eu-north-1/index.json
 - https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/eu-north-1/index.json
 - https://aws.amazon.com/vpc/pricing/
+
+### 2026-10-29 approved allowance and screenshot review
+
+User explicitly approved USD 1 total project usage allowance and described foundation/IAM
+provisioning scope. Earlier NOT-approved notes are superseded. No automatic hard cap exists.
+No AWS provisioning performed during screenshot processing.
+
+Screenshot shows estimated October bill USD 0.00 (Pending), credit summary USD 119.97
+estimated remaining, and two credit rows Expired October 28. Do not assume credit offset.
+Resolve discrepancy before using approved provisioning scope. Budget overview confirms
+USD 1 and Healthy/OK, but not notification threshold or delivery.

@@ -118,3 +118,24 @@ Git commit and push verified at batch close.
 
 ## 2026-10-29 latest evidence update
 Terraform screenshot received and saved: evidence/screenshots/03f-terraform-validation.png, showing version 1.17.1 and successful validation. Supersedes earlier MISSING status for this screenshot only. Account credit/budget screenshots, spending allowance and foundation/IAM approval remain pending. Screenshot upload is not provisioning authorization. Next: obtain these together, then refresh/check the approved plan before any apply. No AWS changes.
+
+## 2026-10-29 billing evidence - latest authoritative update
+
+USD 1 project usage allowance and the explained 9-resource Stockholm foundation/IAM changes,
+including possible ECS service-linked-role creation, are explicitly approved by the user.
+Do not ask for those same approvals again. GitHub OIDC, public task rollout and teardown
+remain outside this approval.
+
+Redacted screenshot copies saved:
+- evidence/screenshots/03c-aws-credits-and-expiry.png
+- evidence/screenshots/03d-aws-budget-overview.png
+- evidence/screenshots/03g-aws-october-bill.png
+Original Downloads files unchanged; only sanitized copies committed. User authorized
+deterministic local redaction. Outside redaction rectangles, pixels are unchanged.
+
+Financial blocker: credits page summary says USD 120 remaining / USD 119.97 estimated
+remaining, but both credit rows are Expired dated October 28, 2026. Usable credits cannot
+be assumed. Bill screenshot is USD 0.00 estimated/pending. Budget overview confirms USD 1
+and Healthy/OK, but not actual threshold, delivery or plan type.
+No AWS changes during redaction. Current next action: resolve credit status and inspect
+budget details read-only; retain approvals while readiness is investigated.

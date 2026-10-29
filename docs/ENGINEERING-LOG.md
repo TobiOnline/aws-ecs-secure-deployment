@@ -140,3 +140,23 @@ concrete foundation/IAM approval. Replan with real reviewed inputs before applyi
 
 ## 2026-10-29 - Terraform screenshot evidence
 Received and visually inspected user screenshot showing correct personal project path, Terraform v1.17.1 on linux_amd64 and successful verify-infrastructure.sh validation. Saved as evidence/screenshots/03f-terraform-validation.png; no credentials visible. This submission contains no explicit spending or provisioning approval. Credit/expiry/plan and budget threshold evidence remain missing; no AWS changes made.
+
+## 2026-10-29 - Billing screenshots and approval synchronization
+
+User explicitly approved USD 1 total project usage allowance, then approved the explained
+Stockholm foundation/IAM changes (9 Terraform resources and automatic ECS service-linked-role
+prerequisite). Approval does not include GitHub OIDC trust, public running service or teardown.
+These approvals persist; do not request them again unless scope or risk materially changes.
+
+User supplied billing/credits/budget screenshots and approved local-script redaction.
+Created clearly named redacted copies; originals preserved in Downloads and never copied
+to Git. Opaque rectangles cover account identifiers, credit IDs and browser profile picture.
+Pixel comparison confirms every unredacted pixel unchanged; outputs visually checked.
+Hashes/rectangles/method recorded in evidence/commands/2026-10-29-screenshot-redactions.json.
+
+Observed: credits summary USD 120 total remaining / USD 119.97 estimated remaining,
+USD 0.03 estimated used, while both listed credits show Expired with October 28, 2026
+expiration. Do not count this as usable credit confirmation. October estimated bill is
+USD 0.00, pending. Budget overview shows USD 1, OK threshold status and Healthy.
+Actual notification threshold, recipient delivery and paid/free plan not shown.
+Provisioning remains paused for credit-status discrepancy resolution; no AWS changes.
