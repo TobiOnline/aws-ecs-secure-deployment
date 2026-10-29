@@ -1,0 +1,42 @@
+[
+  {
+    "file": "05a-ci-success-summary.png",
+    "source_sha256": "46f85475b0b3a92e692a6fde67cf9286a9f1154a47a8849c4fdbbb3afb13f793",
+    "output_sha256": "b455a1cd0bfa4787519ba508860f2817131ee8c7589fdd11a66fb9aeb80c1160",
+    "rectangles": [
+      [
+        0,
+        0,
+        1364,
+        39
+      ],
+      [
+        1290,
+        43,
+        1328,
+        81
+      ]
+    ],
+    "outside_redactions_unchanged": true
+  },
+  {
+    "file": "05b-ci-blocked-summary.png",
+    "source_sha256": "401095240800ba603ab3cf7cf8e7adaa04c65307537fcf58822740c6f02abfd2",
+    "output_sha256": "d12954172d87beb8277b6cd3d418277820905f0ea1e7fcd0ce4616937fd00578",
+    "rectangles": [
+      [
+        0,
+        0,
+        1364,
+        39
+      ],
+      [
+        1290,
+        43,
+        1328,
+        81
+      ]
+    ],
+    "outside_redactions_unchanged": true
+  }
+]

@@ -224,3 +224,6 @@ Remaining work needs no running AWS app:
 3. Account MFA screenshots and AWS Support credit-review outcome remain separate
    account-setup evidence, not proof of application deployment.
 Previous snapshots above are retained as history; this section supersedes deployment blockers.
+
+## 2026-10-29 latest CI evidence update
+Passing/failing CI summary screenshots saved as evidence/screenshots/05a-ci-success-summary.png and 05b-ci-blocked-summary.png. User originals unchanged; tabs/profile picture redacted, remaining pixels unchanged. Run IDs visually match previously verified API records. CI screenshot summary gap closed; step-level proof remains in existing run JSON. No AWS resources restarted. Remaining closeout: final billing confirmation and other uncaptured cloud screenshots. Next: review updated AWS Bills when available; no paid deployment needed. Demo tag v0.1.0-demo remains the earlier release snapshot; main includes subsequent evidence closeout.

@@ -10,7 +10,7 @@ a controlled failed release were verified. All 16 Terraform-managed resources we
 independent inventory and empty state confirmed. No demo service remains online.
 
 Conservative compute + IPv4 estimate: USD 0.01150609, excluding logs/storage/alarm/transfer/tax.
-Final AWS billing is pending. Cloud screenshots are missing; sanitized API evidence and real
+Final AWS billing is pending. CI summary screenshots are saved; other live cloud screenshots are missing; sanitized API evidence and real
 workflow links are indexed in docs/EVIDENCE-INDEX.md. Original MVP outcomes 1-6 are verified;
 final cost/evidence closeout remains partial (6/7 outcomes, rounded 86%).
 

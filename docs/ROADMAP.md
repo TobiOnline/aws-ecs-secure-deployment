@@ -124,3 +124,8 @@ Native ECR scan is unsupported for this image; local Trivy remains required.
   delayed final cost and missing cloud/CI screenshots remain.
 Progress: 6/7 complete acceptance outcomes = 86% rounded, not an estimate of engineering hours.
 No cloud work remains running and no redeployment is needed for billing review.
+
+### 2026-10-29 CI visual closeout
+- [x] Real passing and deliberately failing GitHub run summary screenshots saved, redacted and linked to API evidence.
+- [ ] Final AWS billing confirmation.
+- [ ] Other live cloud screenshots remain explicitly missing; no redeployment authorized for visuals.

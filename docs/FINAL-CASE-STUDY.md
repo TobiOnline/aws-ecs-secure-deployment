@@ -59,7 +59,7 @@ Default VPC, Identity Center and shared service roles were preserved.
 
 ## Evidence and limits
 All evidence paths are indexed in EVIDENCE-INDEX.md. Historical local screenshots are saved.
-Live cloud/CI screenshots remain missing: browser automation stopped at a URL-confidence
+CI success/failure summary screenshots are now saved. Other live cloud screenshots remain missing: browser automation stopped at a URL-confidence
 safety boundary, and no screenshot was fabricated. Sanitized API/HTTP results, run URLs,
 image digests and Git history supply the current reproducible evidence.
 MFA setup was owner-reported and is separate from this workload's deployment controls.

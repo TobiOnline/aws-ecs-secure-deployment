@@ -236,3 +236,6 @@ runtime was kept waiting for visuals. Original MVP outcomes 1-6 verified; outcom
 for final billing/visual evidence (6/7 = 86% rounded). Release v0.1.0-demo prepared at close.
 
 Release-close checks observed: six app tests passed, pip check clean, lint passed across app/tests/scripts, Terraform fmt/validate passed, Gitleaks full Git-history report has zero findings. Targeted candidate-text scan found no AWS account identifier/access-key/private-key patterns. Ignored operational state/plan files restricted to owner-only permissions where controlled.
+
+## 2026-10-29 - CI screenshot closeout
+Received real GitHub summary screenshots for successful final deployment run 40866951465 (#5, source c9cb57a) and deliberate test-failure run 40862041799 (#1, source 65f4146). Saved redacted copies as 05a-ci-success-summary.png and 05b-ci-blocked-summary.png. Browser tabs/profile picture concealed with opaque rectangles; all other pixels verified unchanged; originals preserved. Visual review confirms run IDs and success/failure. Summary images do not show individual steps; existing API evidence proves the failing Tests step and skipped delivery. No new AWS work. Final bill and other live cloud screenshots remain outstanding.

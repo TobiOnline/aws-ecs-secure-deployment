@@ -151,3 +151,12 @@ GitHub run pages persist after teardown; live cloud images cannot be recreated r
 
 | evidence/test-results/2026-10-29-history-secret-scan.json | Full Git-history Gitleaks scan: zero findings |
 | evidence/commands/2026-10-29-final-privacy-check.json | Candidate text/account/credential checks clean; local operational permissions restricted |
+
+## 2026-10-29 CI screenshots now captured
+| Evidence | Result / limitation |
+|---|---|
+| evidence/screenshots/05a-ci-success-summary.png | Run 40866951465 (#5) successful final deployment summary; identifiers/commit match API evidence |
+| evidence/screenshots/05b-ci-blocked-summary.png | Run 40862041799 (#1) failure summary; existing API evidence establishes intentional test failure and skipped delivery |
+| evidence/commands/2026-10-29-ci-screenshot-redactions.json | Pixel-preserving redaction verification and source/output hashes |
+
+These two images fulfill the CI summary screenshot gap instead of the earlier proposed combined 05-ci-passing-and-blocked.png. Individual steps are not visible in these captures; refer to saved run JSON for step-level proof. Other live cloud images and final billing confirmation remain missing.
