@@ -92,6 +92,7 @@ resource "aws_ecs_task_definition" "app" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
+  enable_fault_injection   = false
   execution_role_arn       = aws_iam_role.execution.arn
   task_role_arn            = aws_iam_role.task.arn
   runtime_platform {
@@ -102,13 +103,16 @@ resource "aws_ecs_task_definition" "app" {
     name                   = "app"
     image                  = "${aws_ecr_repository.app.repository_url}@${var.image_digest == null ? "MISSING" : var.image_digest}"
     essential              = true
+    environment            = []
+    systemControls         = []
+    volumesFrom            = []
     user                   = "10001:10001"
     readonlyRootFilesystem = true
-    portMappings           = [{ containerPort = 8000, protocol = "tcp" }]
+    portMappings           = [{ containerPort = 8000, hostPort = 8000, protocol = "tcp" }]
     # Fargate has no tmpfs support. Dockerfile VOLUME seeds app-owned runtime storage.
     mountPoints = [{ sourceVolume = "runtime-tmp", containerPath = "/app/runtime", readOnly = false }]
     linuxParameters = {
-      capabilities       = { drop = ["ALL"] }
+      capabilities       = { add = [], drop = ["ALL"] }
       initProcessEnabled = true
     }
     healthCheck = {
@@ -128,7 +132,8 @@ resource "aws_ecs_task_definition" "app" {
     }
   }])
   volume {
-    name = "runtime-tmp"
+    name                = "runtime-tmp"
+    configure_at_launch = false
   }
   lifecycle {
     precondition {

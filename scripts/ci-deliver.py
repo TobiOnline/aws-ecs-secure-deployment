@@ -14,7 +14,7 @@ if not os.environ.get("AWS_ACCESS_KEY_ID") or not os.environ.get("AWS_SESSION_TO
 def aws(*args):
     return json.loads(subprocess.check_output(["aws", *args, "--region", "eu-north-1", "--output", "json", "--no-cli-pager"], text=True))
 repo = aws("ecr", "describe-repositories", "--repository-names", "aws-ecs-secure-deployment")["repositories"][0]
-tag = os.environ["GITHUB_SHA"] + "-" + os.environ["GITHUB_RUN_NUMBER"]
+tag = os.environ["GITHUB_SHA"] + "-" + os.environ["GITHUB_RUN_NUMBER"] + "-" + os.environ.get("GITHUB_RUN_ATTEMPT", "1")
 image = repo["repositoryUri"] + ":" + tag
 (root / ".cache").mkdir(exist_ok=True)
 with tempfile.TemporaryDirectory(prefix="docker-oidc-", dir=root / ".cache") as auth:

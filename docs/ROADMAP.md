@@ -109,3 +109,6 @@ Native ECR scan is unsupported for this image; local Trivy remains required.
 - [x] Actual one-task health, both HTTP 200 endpoints, logs and alarm OK evidenced.
 - [~] Controlled bad release and recovery in progress.
 - [ ] CI-driven new task revision, teardown verification, final case study/cost review and missing screenshots.
+
+- [x] Real failed revision 2 and automatic recovery to healthy revision 1 evidenced.
+- [~] Final CI image publication passed; task update blocked by metadata-read permission, minimal correction applied/in progress.

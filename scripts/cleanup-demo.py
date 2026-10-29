@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -37,20 +38,37 @@ if not execute:
 services = aws("ecs", "describe-services", "--cluster", "aws-ecs-secure-deployment", "--services", "aws-ecs-secure-deployment")["services"]
 if services and services[0]["status"] == "ACTIVE":
     aws("ecs", "update-service", "--cluster", "aws-ecs-secure-deployment", "--service", "aws-ecs-secure-deployment", "--desired-count", "0")
+active_tasks = aws("ecs", "list-tasks", "--cluster", "aws-ecs-secure-deployment", "--desired-status", "RUNNING")["taskArns"]
+if active_tasks:
+    subprocess.run(["aws", "ecs", "wait", "tasks-stopped", "--cluster", "aws-ecs-secure-deployment", "--tasks", *active_tasks, "--profile", "tobi-admin", "--region", "eu-north-1"], check=True)
+subprocess.run(["python3", "scripts/capture-cost-estimate.py"], cwd=root, check=True)
 images = aws("ecr", "list-images", "--repository-name", "aws-ecs-secure-deployment")["imageIds"]
 # Delete by digest once even if multiple tags reference it.
 ids = [{"imageDigest": digest} for digest in sorted({i["imageDigest"] for i in images})]
-for i in range(0, len(ids), 100):
-    result = aws("ecr", "batch-delete-image", "--repository-name", "aws-ecs-secure-deployment", "--image-ids", json.dumps(ids[i:i+100]))
-    if result.get("failures"):
-        raise SystemExit("Image cleanup failed; stopped before Terraform apply")
+pending = ids
+for attempt in range(5):
+    retry = []
+    for i in range(0, len(pending), 100):
+        result = aws("ecr", "batch-delete-image", "--repository-name", "aws-ecs-secure-deployment", "--image-ids", json.dumps(pending[i:i+100]))
+        for failure in result.get("failures", []):
+            if failure["failureCode"] == "ImageNotFound":
+                continue
+            if failure["failureCode"] != "ImageReferencedByManifestList":
+                raise SystemExit("Image cleanup failed; stopped before Terraform apply")
+            retry.append(failure["imageId"])
+    pending = retry
+    if not pending:
+        break
+    time.sleep(2)
+if pending:
+    raise SystemExit("Referenced image manifests remain; stop and review before Terraform apply")
 with (root / ".cache/teardown-apply.log").open("w") as out:
     subprocess.run([tf, "-chdir=" + str(directory), "apply", "-input=false", "-no-color", str(plan)], env=env, stdout=out, stderr=subprocess.STDOUT, check=True)
 # CI/fault revisions are outside Terraform ownership; deregister only this project's family.
 definitions = aws("ecs", "list-task-definitions", "--family-prefix", "aws-ecs-secure-deployment", "--status", "ACTIVE")["taskDefinitionArns"]
+definitions = [arn for arn in definitions if arn.rsplit("/", 1)[-1].split(":")[0] == "aws-ecs-secure-deployment"]
 for arn in definitions:
-    if arn.rsplit("/", 1)[-1].split(":")[0] == "aws-ecs-secure-deployment":
-        aws("ecs", "deregister-task-definition", "--task-definition", arn)
+    aws("ecs", "deregister-task-definition", "--task-definition", arn)
 summary = {"time": datetime.now(ZoneInfo("Africa/Lagos")).isoformat(), "terraform_resources_destroyed": len(changes), "image_digests_deleted": len(ids), "project_revisions_deregistered": len(definitions), "default_vpc_and_identity_center_preserved": True, "independent_inventory_still_required": True}
 (root / "evidence/commands/2026-10-29-teardown.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps(summary, indent=2))

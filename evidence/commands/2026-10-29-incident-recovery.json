@@ -1,0 +1,11 @@
+{
+  "started": "2026-10-29T12:20:18.354611+01:00",
+  "ended": "2026-10-29T12:24:35.000817+01:00",
+  "good_revision": 1,
+  "controlled_bad_revision": 2,
+  "failure_observed_in_service": true,
+  "automatic_rollback": true,
+  "known_good_restored": true,
+  "running": 1,
+  "public_downtime_claimed": false
+}

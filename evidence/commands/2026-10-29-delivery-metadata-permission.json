@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-29",
+  "changed": "Only existing scoped delivery policy; DescribeTaskDefinition and RegisterTaskDefinition Resource * with aws:RequestedRegion=eu-north-1",
+  "reason": "Required read API has no resource-level scope; confirmed by AWS authorization reference and actual denied request",
+  "other_permissions": "ECR/service/PassRole still resource scoped; no admin grant",
+  "task_definition": "API-inserted defaults made explicit to avoid unintentional replacement; no workload changes applied",
+  "applied": true
+}

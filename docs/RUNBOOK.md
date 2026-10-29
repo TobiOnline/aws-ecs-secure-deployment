@@ -29,3 +29,34 @@ Do not leave a desired-count=1 service overnight. Stopping a service-owned task 
 insufficient: ECS replaces it. Under approved teardown, delete/scale down the service first,
 preserve logs/evidence, delete only reviewed project images, then apply reviewed Terraform destroy.
 Retain local state until independent post-destroy inventory succeeds. Billing may lag.
+
+## Reproduce tools and workflow
+From a fresh clone in WSL/Linux x86_64, inspect scripts before execution:
+```bash
+python3 scripts/install-terraform.py
+.tools/terraform -chdir=infrastructure/terraform init
+bash scripts/verify-infrastructure.sh
+```
+Installer verifies the pinned official release archive hash. Use SSO and obtain explicit
+resource/IAM/cost approval before applying the reviewed Terraform configuration.
+
+The manual workflow uses an ephemeral local runner to avoid hosted-compute charges:
+```bash
+python3 scripts/run-local-ci.py
+python3 scripts/run-local-ci.py --failure
+```
+Only trusted main code is eligible; never accept untrusted PR jobs on this host.
+The script downloads the checksum-pinned official runner if absent and uses a fresh workspace.
+An ephemeral registration disappears after one job. The host is not a security sandbox.
+GitHub token needs repository runner/workflow access; do not paste it into scripts.
+Deliver/deploy flags require the corresponding cloud approvals and configured OIDC role identifier.
+
+After approved deployment and incident evidence:
+```bash
+APPROVED_REVERSIBLE_FAULT=true python3 scripts/simulate-recovery.py
+APPROVED_DEMO_CLEANUP=true python3 scripts/cleanup-demo.py --execute
+```
+Cleanup previews exact project deletes, scales service down, removes reviewed image manifests,
+destroys Terraform-managed project resources and deregisters exact-family task revisions.
+It preserves default/shared account infrastructure. Verify independent inventory afterward.
+Local 45-minute guard is a fallback only; it does not survive every host/network failure or cap bills.

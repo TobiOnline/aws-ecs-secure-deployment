@@ -78,3 +78,6 @@ temporary access, no sensitive payload and explicit risk acknowledgment required
 
 ### 2026-10-29 immutable GitHub subject correction
 Repository uses immutable default subject from GitHub API, confirmed by STS CloudTrail. Legacy name-only condition denied assumption. Role trust now matches the exact owner/repository IDs and main ref, with sts.amazonaws.com audience. No wildcard or broader repo/ref granted. Source: https://docs.github.com/en/actions/reference/security/oidc .
+
+### 2026-10-29 task-definition metadata scope
+Observed CI failure confirmed DescribeTaskDefinition evaluates resource *. Like RegisterTaskDefinition it has no resource-level entry in AWS authorization table. Both actions use Resource * with aws:RequestedRegion eu-north-1; ECR, service update and PassRole remain scoped. This allows metadata reads of known task families in Stockholm, not only this family, and is documented as a residual scope limitation. No list/task-run/admin access added. Source: https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecs.html .

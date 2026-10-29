@@ -189,3 +189,6 @@ Run 40862493388 attempt 1 failed role assumption because this new repo uses immu
 
 ## 2026-10-29 deployed demo - latest
 Passing OIDC publication workflow 40864000531 succeeded. All 16 project Terraform resources now applied. Initial service has one healthy running task, revision 1, successful HTTP endpoints, logs and CPU alarm OK. Controlled fault/recovery script currently running; do not interrupt with a concurrent service update. Finite 45-minute local guard active. Next: verify recovery, run a final CI-driven task revision deployment, collect evidence and execute approved teardown immediately. Screenshots missing unless user supplies them; never delay cleanup for screenshots.
+
+## 2026-10-29 recovery and final delivery retry
+Automatic rollback proven: bad revision 2 exit 1 rejected, revision 1 restored and HTTP 200 verified. Final CI publication succeeded but metadata read denied before service update; correcting required API-wide read with Stockholm-only condition. Existing healthy service remains revision 1. Next: fresh final deployment workflow with corrected policy/code; after success collect evidence and run approved teardown. Local 45-minute scale-zero guard remains active.

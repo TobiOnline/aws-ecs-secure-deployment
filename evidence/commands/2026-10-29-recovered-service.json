@@ -1,0 +1,68 @@
+{
+  "time": "2026-10-29T12:24:40.619190+01:00",
+  "region": "eu-north-1",
+  "service_status": "ACTIVE",
+  "desired": 1,
+  "running": 1,
+  "pending": 0,
+  "deployments": [
+    {
+      "status": "PRIMARY",
+      "revision": 1,
+      "rollout": "COMPLETED"
+    }
+  ],
+  "task_health": [
+    {
+      "status": "RUNNING",
+      "health": "HEALTHY",
+      "container_health": [
+        "HEALTHY"
+      ]
+    }
+  ],
+  "http": {
+    "/": {
+      "status": 200,
+      "body": {
+        "service": "aws-ecs-secure-deployment",
+        "status": "ok"
+      }
+    },
+    "/health": {
+      "status": 200,
+      "body": {
+        "status": "healthy"
+      }
+    }
+  },
+  "log_messages": [
+    "[2026-10-29 11:17:51 +0000] [7] [INFO] Starting gunicorn 26.2.0",
+    "[2026-10-29 11:17:51 +0000] [7] [INFO] Listening at: http://[IP]:8000 (7)",
+    "[2026-10-29 11:17:51 +0000] [7] [INFO] Using worker: sync",
+    "[2026-10-29 11:17:51 +0000] [14] [INFO] Booting worker with pid: 14",
+    "[2026-10-29 11:17:51 +0000] [7] [ERROR] Control server error: [Errno 30] Read-only file system: '/home/app'",
+    "[IP] - - [29/Oct/2026:11:18:06 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:18:21 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:18:36 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:18:51 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:06 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:21 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:36 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:44 +0000] \"GET / HTTP/1.1\" 200 54 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:44 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:19:51 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:20:06 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:20:21 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:20:36 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "[IP] - - [29/Oct/2026:11:20:51 +0000] \"GET /health HTTP/1.1\" 200 21 \"-\" \"Python-urllib/3.14\"",
+    "controlled deployment fault for recovery evidence"
+  ],
+  "alarm": [
+    {
+      "state": "OK",
+      "metric": "CPUUtilization",
+      "threshold": 80.0
+    }
+  ]
+}

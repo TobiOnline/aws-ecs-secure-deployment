@@ -1,0 +1,42 @@
+{
+  "time": "2026-10-29T12:23:14.237661+01:00",
+  "running": 1,
+  "pending": 1,
+  "deployments": [
+    {
+      "revision": 2,
+      "status": "PRIMARY",
+      "rollout": "IN_PROGRESS",
+      "failed_tasks": 3
+    },
+    {
+      "revision": 1,
+      "status": "ACTIVE",
+      "rollout": "COMPLETED",
+      "failed_tasks": 0
+    }
+  ],
+  "stopped_tasks": [
+    {
+      "revision": 2,
+      "reason": "EssentialContainerExited",
+      "exit_codes": [
+        1
+      ]
+    },
+    {
+      "revision": 2,
+      "reason": "EssentialContainerExited",
+      "exit_codes": [
+        1
+      ]
+    },
+    {
+      "revision": 2,
+      "reason": "EssentialContainerExited",
+      "exit_codes": [
+        1
+      ]
+    }
+  ]
+}

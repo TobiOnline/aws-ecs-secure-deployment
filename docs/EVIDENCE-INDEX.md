@@ -126,3 +126,9 @@ Screenshot automation attempted but stopped safely at browser URL-confidence bou
 | evidence/commands/2026-10-29-ci-passing-publication.json | Real successful security/OIDC/ECR publication workflow 40864000531 |
 | evidence/commands/2026-10-29-service-applied.json | Four approved service/ingress/alarm creates applied; operator IP omitted |
 | evidence/commands/2026-10-29-initial-deployment.json | Real healthy task, HTTP 200 endpoints, sanitized CloudWatch messages and CPU alarm OK |
+
+| evidence/commands/2026-10-29-incident-during.json | Actual stopped revision-2 tasks with exit code 1 and retained healthy revision |
+| evidence/commands/2026-10-29-incident-recovery.json | Failure observed, automatic rollback true, known-good restored |
+| evidence/commands/2026-10-29-recovered-service.json | Recovered HTTP/health/log/alarm validation |
+| evidence/commands/2026-10-29-ci-metadata-read-failure.json | Pipeline passed security/OIDC/push; read permission denied before service update |
+| evidence/commands/2026-10-29-delivery-metadata-permission.json | Required DescribeTaskDefinition scope corrected with Stockholm restriction |
