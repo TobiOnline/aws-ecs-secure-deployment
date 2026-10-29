@@ -115,3 +115,6 @@ image only after approval. GitHub OIDC and actual service rollout need reviewed 
 Current changed scope: Terraform, Docker runtime adaptation, repeatable scan utilities,
 architecture/cost/security/handoff docs, new dated build/runtime/scan/plan evidence.
 Git commit and push verified at batch close.
+
+## 2026-10-29 latest evidence update
+Terraform screenshot received and saved: evidence/screenshots/03f-terraform-validation.png, showing version 1.17.1 and successful validation. Supersedes earlier MISSING status for this screenshot only. Account credit/budget screenshots, spending allowance and foundation/IAM approval remain pending. Screenshot upload is not provisioning authorization. Next: obtain these together, then refresh/check the approved plan before any apply. No AWS changes.

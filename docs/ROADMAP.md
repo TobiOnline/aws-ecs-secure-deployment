@@ -56,3 +56,8 @@ No apply, IAM changes, paid resources or destructive cleanup without the user's 
 
 MVP ratio remains 2/7 (29% rounded): prepared infrastructure is not deployed infrastructure.
 Earlier pending tool-install items are now complete; Terraform deployment remains incomplete.
+
+### 2026-10-29 evidence update
+- [x] Terraform milestone screenshot saved and inspected: evidence/screenshots/03f-terraform-validation.png.
+- [ ] Current credit/expiry/plan and budget threshold evidence.
+- [ ] Explicit project spending allowance and foundation/IAM provisioning approval.

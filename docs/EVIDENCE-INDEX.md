@@ -67,3 +67,10 @@ No missing screenshot was created or marked as captured by this audit.
 
 No raw Terraform plan, AWS credentials, account IDs or real operator IP saved in shareable
 plan evidence. AWS account setup screenshots listed above remain MISSING.
+
+### 2026-10-29 Terraform screenshot captured
+| Evidence | Status | Result / privacy |
+|---|---|---|
+| evidence/screenshots/03f-terraform-validation.png | SAVED and visually inspected | Terraform 1.17.1, correct personal path and successful configuration validation; no credentials visible |
+
+This supersedes the earlier MISSING entry for 03f only. Other AWS screenshots remain missing.

@@ -137,3 +137,6 @@ trust must be redesigned if a GitHub Environment is used.
 
 Next: capture local Terraform milestone evidence, obtain account credit/budget proof and
 concrete foundation/IAM approval. Replan with real reviewed inputs before applying.
+
+## 2026-10-29 - Terraform screenshot evidence
+Received and visually inspected user screenshot showing correct personal project path, Terraform v1.17.1 on linux_amd64 and successful verify-infrastructure.sh validation. Saved as evidence/screenshots/03f-terraform-validation.png; no credentials visible. This submission contains no explicit spending or provisioning approval. Credit/expiry/plan and budget threshold evidence remain missing; no AWS changes made.
