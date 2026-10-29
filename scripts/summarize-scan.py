@@ -1,12 +1,12 @@
 """Summarize the full scan and fail on HIGH/CRITICAL findings with fixes."""
 import json
 import sys
-from datetime import datetime, timezone
 from collections import Counter
+from datetime import UTC, datetime
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
-report_path = root / (sys.argv[1] if len(sys.argv) > 1 else "evidence/test-results/" + datetime.now(timezone.utc).strftime("%Y-%m-%d") + "-trivy.json")
+report_path = root / (sys.argv[1] if len(sys.argv) > 1 else "evidence/test-results/" + datetime.now(UTC).strftime("%Y-%m-%d") + "-trivy.json")
 report = json.loads(report_path.read_text())
 if "Results" not in report or not report.get("Metadata", {}).get("OS"):
     raise SystemExit("Incomplete scan report: OS metadata or results missing")

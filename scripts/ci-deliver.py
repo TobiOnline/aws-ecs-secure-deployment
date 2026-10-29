@@ -1,6 +1,9 @@
 """OIDC-only delivery from a manual main-branch GitHub workflow."""
+import json
+import os
+import subprocess
+import tempfile
 from pathlib import Path
-import json, os, subprocess, tempfile
 
 root = Path(__file__).resolve().parent.parent
 if os.environ.get("GITHUB_REF") != "refs/heads/main":
@@ -17,12 +20,12 @@ with tempfile.TemporaryDirectory(prefix="docker-oidc-", dir=root / ".cache") as 
     env = os.environ.copy()
     env["DOCKER_CONFIG"] = auth
     token = subprocess.check_output(["aws", "ecr", "get-login-password", "--region", "eu-north-1"], text=True)
-    login = subprocess.run(["docker", "login", "--username", "AWS", "--password-stdin", image.split("/")[0]], input=token, text=True, capture_output=True, env=env)
+    login = subprocess.run(["docker", "login", "--username", "AWS", "--password-stdin", image.split("/")[0]], input=token, text=True, capture_output=True, env=env, check=False)
     del token
     if login.returncode:
         raise SystemExit("ECR login failed")
     subprocess.run(["docker", "tag", "aws-ecs-secure-deployment:stage3", image], env=env, check=True)
-    push = subprocess.run(["docker", "push", image], env=env, capture_output=True, text=True)
+    push = subprocess.run(["docker", "push", image], env=env, capture_output=True, text=True, check=False)
     if push.returncode:
         raise SystemExit("Image push failed")
 digest = aws("ecr", "describe-images", "--repository-name", "aws-ecs-secure-deployment", "--image-ids", "imageTag=" + tag)["imageDetails"][0]["imageDigest"]

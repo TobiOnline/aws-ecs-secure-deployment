@@ -1,6 +1,9 @@
 """Install only the pinned official Gitleaks binary into ignored project tooling."""
+import hashlib
+import io
+import tarfile
+import urllib.request
 from pathlib import Path
-import hashlib, io, tarfile, urllib.request
 
 root = Path(__file__).resolve().parent.parent
 url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz"

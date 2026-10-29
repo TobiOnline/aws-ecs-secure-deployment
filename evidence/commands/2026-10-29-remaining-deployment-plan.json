@@ -1,10 +1,15 @@
 {
-  "date": "2026-10-29T11:49:26.171443+01:00",
+  "date": "2026-10-29",
   "region": "eu-north-1",
   "applied": false,
-  "image_digest": "sha256:6c34f20dcc13faeb3fe893f64536086ec38d3a2007030798a6069e40d875e672",
-  "ingress": "Current operator IPv4 /32 only; actual IP withheld",
+  "operator_ingress": "current IPv4 /32 only; IP omitted",
   "changes": [
+    {
+      "address": "aws_cloudwatch_metric_alarm.cpu[0]",
+      "actions": [
+        "create"
+      ]
+    },
     {
       "address": "aws_ecs_service.app[0]",
       "actions": [
@@ -41,5 +46,7 @@
         "create"
       ]
     }
-  ]
+  ],
+  "estimate": "USD 0.018575 per task-hour plus storage/logs; console CPU alarm USD 0.10/metric-month, prorated; no notification destination",
+  "risk": "44 HIGH unpatched image findings; no sensitive application data; temporary demo only"
 }

@@ -41,9 +41,8 @@ jobs:
       - name: Inject deliberate failing test when requested
         if: inputs.demonstrate_failure
         run: |
-          printf 'def test_deliberate_delivery_block():
-    assert False, "Expected demonstration: delivery must be blocked"
-' > tests/test_delivery_gate_demo.py
+          echo 'def test_deliberate_delivery_block():' > tests/test_delivery_gate_demo.py
+          echo '    assert False, "Expected demonstration: delivery must be blocked"' >> tests/test_delivery_gate_demo.py
       - name: Tests
         run: bash scripts/verify-local.sh
       - name: Scan repository history for secrets

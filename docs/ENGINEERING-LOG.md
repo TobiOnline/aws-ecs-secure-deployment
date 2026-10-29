@@ -186,3 +186,19 @@ User selected 'Proceed with the under-$1 target' after explicit disclosure that 
 
 ## 2026-10-29 - Approved foundation applied and image published
 Actual charges targeting under USD 1 explicitly accepted. Refreshed regional pricing and exact nine-create plan, verified BASIC ECR scanning and selected subnet effective IGW route, then applied foundation: nine added, no task/public endpoint/OIDC. Published tested stage3 image under commit-SHA tag; digest in evidence/commands/2026-10-29-ecr-image.json. ECR scan query did not return findings; local Trivy evidence remains separate. Local CI checks pass: lint, six tests, Gitleaks history and runtime dependency audit. Manual-only main workflow and delivery code prepared; no GitHub run yet. Screenshots pending.
+
+## 2026-10-29 - Delivery preparation and access blocker
+Foundation created and ECR image published. Native ECR BASIC manual scan returned
+UnsupportedImageTypeException for this image; retain local Trivy results (44 unpatched HIGH),
+do not claim an ECR scan pass. Pipeline local lint/tests/Gitleaks history/runtime audit pass.
+
+Manual-only workflow commit 155bc39 was rejected by GitHub on push because OAuth token lacks
+workflow scope. User asked to run gh auth refresh -h github.com -s workflow. No workflow run
+or OIDC role created. Corrected a YAML quoting issue during local inspection and parsed final YAML.
+Temporary runner 2.338.2 downloaded with official asset digest verified; invariant globalization
+mode resolves missing ICU without system install. Runner is not registered or running.
+
+Prepared guarded evidence/recovery/cleanup scripts; not executed. Current remaining Terraform
+plan includes seven creates: OIDC provider/role/policy, task definition, service, /32 ingress,
+CPU alarm. Full demo/failure/teardown approval requested in one batch, still pending.
+No Fargate tasks running. Latest source/evidence/docs committed locally; push blocked by scope.

@@ -159,3 +159,24 @@ User explicitly accepts actual charges targeting under USD 1, no guaranteed cap,
 
 ## 2026-10-29 foundation execution - current state
 User accepts actual charges targeting under USD 1, short deployment and prompt teardown. Approved nine-resource foundation applied; no Fargate task/public endpoint/OIDC yet. Tested image published; exact tag/digest in evidence/commands/2026-10-29-ecr-image.json. Terraform state is local/ignored: preserve it. Current next batch: commit prepared manual CI, run it on checksum-verified ephemeral local runner (no hosted compute), obtain approval for remaining seven-resource OIDC/service/alarm proposal and controlled recovery/teardown. Screenshot evidence missing for actual ECR/foundation.
+
+## 2026-10-29 current blockers after foundation
+Foundation exists and image is stored in ECR. No Fargate task, public endpoint or OIDC role.
+Native BASIC scan unsupported for image (UnsupportedImageTypeException); local Trivy findings
+remain the security evidence. Do not claim native scan passed.
+
+Prepared CI local checks pass, final YAML parsed, scripts compile. Runner downloaded/verified
+but not registered; DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 needed on this WSL runtime.
+No GitHub-hosted compute triggered; no GitHub workflow runs yet.
+Commit 155bc39 push rejected: gh login lacks workflow scope. User must run
+gh auth refresh -h github.com -s workflow, then notify us. Do not print authentication codes/tokens.
+
+Pending separate async approval covers exact remaining seven creates, documented 44-HIGH risk,
+temporary local runner, controlled failure/rollback and project-only teardown. Actual-charge
+under-USD-1 target is already approved; do not request it again.
+
+Next: once workflow scope and remaining approval arrive, push prepared source, dispatch trusted
+CI on ephemeral local runner, apply refreshed approved remaining plan, verify/recover/deploy and
+promptly clean up project-only resources. State and ignored raw plans must be preserved.
+Screenshot/evidence collection still required; no cloud milestone claimed fully complete yet.
+Local commits ahead of origin; push unavailable until workflow permission refresh.

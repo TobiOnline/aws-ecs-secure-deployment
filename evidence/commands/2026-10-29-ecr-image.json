@@ -7,5 +7,9 @@
   "size_bytes": 45891433,
   "pushed": true,
   "scan_status": "not returned",
-  "ecr_scan_status": "query did not return findings"
+  "ecr_scan_status": "query did not return findings",
+  "manual_basic_scan_request": {
+    "status": "request failed",
+    "error": "UnsupportedImageTypeException"
+  }
 }

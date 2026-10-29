@@ -105,3 +105,9 @@ message authorized/sent by agent. No resources created or deleted.
 
 ### 2026-10-29 actual-charge run started
 User explicitly accepts under-USD-1 operational target (no guaranteed cap). Nine-resource foundation applied, ~46 MB private ECR image stored. No Fargate running task/public endpoint yet. Existing default VPC/Identity Center not managed. Shared ECS service-linked role may have been created by ECS; preserve if shared. Runtime and teardown evidence will be added after actual execution.
+
+### 2026-10-29 current running-cost posture
+Only approved foundation and private image storage exist; no Fargate task/public IP yet.
+Pipeline is prepared but not triggered; local ephemeral runner chosen to avoid hosted compute
+charges. No runner registered. Actual-charge target under USD 1 remains accepted, not guaranteed.
+Native BASIC scan unsupported, no Inspector/enhanced scan enabled.

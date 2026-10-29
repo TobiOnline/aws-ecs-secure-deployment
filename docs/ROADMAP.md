@@ -83,3 +83,12 @@ Foundation/IAM scope remains approved; no cloud changes made.
 - [~] Stage 3 implemented; screenshot evidence and final checkpoint push pending.
 - [~] Manual CI workflow authored; local lint/tests/history-secret/runtime dependency checks pass. Actual workflow runs pending.
 - [ ] Remaining OIDC, service, restricted ingress, alarm, recovery and teardown approvals/execution.
+
+### 2026-10-29 pipeline readiness and blockers
+- [x] Local lint/tests/history-secret/runtime-audit checks pass; workflow YAML parsed.
+- [x] Temporary local runner package verified; not registered/started.
+- [~] Foundation/ECR implemented; screenshots and push pending.
+- [ ] GitHub workflow scope refresh; prepared commits cannot push without it.
+- [ ] Explicit remaining seven-resource demo/recovery/cleanup approval.
+- [ ] Actual passing/failing GitHub runs, OIDC delivery, deployment, recovery and cleanup evidence.
+Native ECR scan is unsupported for this image; local Trivy remains required.

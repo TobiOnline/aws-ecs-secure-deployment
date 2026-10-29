@@ -103,3 +103,10 @@ No claim of subscriber delivery or global zero spending.
 | evidence/commands/2026-10-29-ecr-image.json | Real immutable published image tag/digest/size; account identifiers omitted |
 | evidence/test-results/2026-10-29-ci-local-checks.txt | Local lint/tests/Gitleaks/runtime audit passed; not a GitHub run |
 | evidence/screenshots/03-ecr-image.png | MISSING; actual ECR publication now ready to capture |
+
+### 2026-10-29 pending delivery validation
+Native BASIC scan attempt in evidence/commands/2026-10-29-ecr-image.json reports
+UnsupportedImageTypeException; no native findings/pass claimed.
+Remaining plan evidence now lists seven creates, adding the CPU alarm.
+Workflow execution evidence absent: push blocked by missing OAuth workflow scope.
+No deployment, recovery or teardown screenshots captured yet.
