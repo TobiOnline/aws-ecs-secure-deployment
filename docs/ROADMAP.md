@@ -69,3 +69,10 @@ Earlier pending tool-install items are now complete; Terraform deployment remain
 - [ ] Capture/verify actual budget notification threshold and account plan.
 - [ ] Proceed with approved foundation only after billing readiness is resolved and plan refreshed.
 No OIDC/public-service/destructive approval inferred.
+
+### 2026-10-29 billing readiness result
+- [x] Account plan independently verified: PAID, ACTIVE.
+- [x] Free Tier API remaining credits USD 0.00; expired-row discrepancy resolved conservatively.
+- [x] Budget threshold verified: monthly actual cost greater than USD 0.01; subscriber configuration present.
+- [ ] Clarify authorization for actual charges up to USD 1 given zero usable Free Tier balance, or resolve credits with AWS Billing Support first.
+Foundation/IAM scope remains approved; no cloud changes made.

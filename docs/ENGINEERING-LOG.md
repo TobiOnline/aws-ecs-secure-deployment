@@ -160,3 +160,23 @@ expiration. Do not count this as usable credit confirmation. October estimated b
 USD 0.00, pending. Budget overview shows USD 1, OK threshold status and Healthy.
 Actual notification threshold, recipient delivery and paid/free plan not shown.
 Provisioning remains paused for credit-status discrepancy resolution; no AWS changes.
+
+## 2026-10-29 - Credit discrepancy resolved through read-only API
+
+Free Tier GetAccountPlanState reports PAID, ACTIVE and accountPlanRemainingCredits USD 0.00.
+This agrees with the screenshot's Expired rows. Do not treat the displayed USD 119.97
+estimated summary as usable credit. Account-specific API result is saved in sanitized
+evidence/commands/2026-10-29-billing-readiness.json.
+
+Budget API confirms monthly COST budget USD 1, actual spend USD 0.00, ACTUAL notification
+GREATER_THAN absolute USD 0.01, notification state OK and three configured subscribers.
+Subscriber addresses not printed or stored; delivery not proven. IncludeCredit is true,
+so the budget is not a gross-credit-consumption cap. Alerts do not stop resources.
+
+Earlier USD 1 allowance and foundation/IAM approval persist, but paid/zero-credit state
+materially changes the expected payment source. Ask whether the user authorizes up to
+USD 1 actual charges or wants AWS Billing Support clarification first. No provisioning,
+IAM mutation, upgrade or support message sent.
+
+Official guidance: expired credits are unavailable for use:
+https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-credits.html

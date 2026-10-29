@@ -91,3 +91,14 @@ Screenshot shows estimated October bill USD 0.00 (Pending), credit summary USD 1
 estimated remaining, and two credit rows Expired October 28. Do not assume credit offset.
 Resolve discrepancy before using approved provisioning scope. Budget overview confirms
 USD 1 and Healthy/OK, but not notification threshold or delivery.
+
+### 2026-10-29 credit status confirmed via Free Tier API
+PAID/ACTIVE plan, remaining Free Tier credits USD 0.00. Expired screenshot rows take
+precedence over treating the estimated summary balance as spendable. No credit offset assumed.
+Budget actual spend USD 0, monthly USD 1, ACTUAL > USD 0.01 notification, IncludeCredit=true.
+Alerts can lag and do not cap charges; configured recipients do not prove delivery.
+
+Existing allowance and foundation approval retained. Need explicit clarification on accepting
+up to USD 1 actual charges because the earlier discussion anticipated promotional credits.
+Alternative: user contacts AWS Billing Support to investigate credit discrepancy; no support
+message authorized/sent by agent. No resources created or deleted.

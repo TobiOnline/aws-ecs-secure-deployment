@@ -87,3 +87,11 @@ Earlier proposed credits-plan/budget-alert filenames remain unsaved; these actua
 partially fulfill those evidence needs, without claiming plan/threshold verification.
 User authorized opaque redaction; account/credit identifiers and profile picture concealed.
 Originals retained outside Git; amount/date/status pixels preserved.
+
+### 2026-10-29 read-only billing verification
+| Evidence | Result / privacy |
+|---|---|
+| evidence/commands/2026-10-29-billing-readiness.json | PAID/ACTIVE; Free Tier remaining USD 0; budget USD 1 monthly, ACTUAL > USD 0.01; subscriber count only, no account IDs/addresses/tokens |
+
+Budget threshold and plan are now API-verified despite missing dedicated screenshots.
+No claim of subscriber delivery or global zero spending.

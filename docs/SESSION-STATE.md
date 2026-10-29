@@ -139,3 +139,17 @@ be assumed. Bill screenshot is USD 0.00 estimated/pending. Budget overview confi
 and Healthy/OK, but not actual threshold, delivery or plan type.
 No AWS changes during redaction. Current next action: resolve credit status and inspect
 budget details read-only; retain approvals while readiness is investigated.
+
+## 2026-10-29 billing API result - latest next action
+
+Verified read-only Free Tier API: PAID/ACTIVE, remaining credits USD 0.00.
+Do not count the screenshot's USD 119.97 estimated summary as usable credits.
+Verified budget: USD 1 monthly, actual cost USD 0, absolute ACTUAL > USD 0.01 notification,
+OK state, three configured subscribers; addresses not recorded and delivery not tested.
+IncludeCredit=true; budget is not a hard/gross spending cap.
+
+Spending allowance/foundation scope approvals remain valid, but payment-source risk changed:
+possible actual charges, not credit consumption. Await user decision to authorize up to
+USD 1 actual charges or contact AWS Billing Support to investigate credit status first.
+Do not provision pending this clarification. No AWS mutations in this batch.
+Evidence: evidence/commands/2026-10-29-billing-readiness.json.

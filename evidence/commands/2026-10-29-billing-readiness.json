@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "aws_mutations": false,
+  "plan": {
+    "accountPlanType": "PAID",
+    "accountPlanStatus": "ACTIVE",
+    "accountPlanRemainingCredits": {
+      "amount": 0.0,
+      "unit": "USD"
+    }
+  },
+  "budgets": [
+    {
+      "type": "COST",
+      "limit": {
+        "Amount": "1.0",
+        "Unit": "USD"
+      },
+      "cost_types": {
+        "IncludeTax": true,
+        "IncludeSubscription": true,
+        "UseBlended": false,
+        "IncludeRefund": true,
+        "IncludeCredit": true,
+        "IncludeUpfront": true,
+        "IncludeRecurring": true,
+        "IncludeOtherSubscription": true,
+        "IncludeSupport": true,
+        "IncludeDiscount": true,
+        "UseAmortized": false
+      },
+      "time_unit": "MONTHLY",
+      "spend": {
+        "ActualSpend": {
+          "Amount": "0.0",
+          "Unit": "USD"
+        }
+      },
+      "notifications": [
+        {
+          "NotificationType": "ACTUAL",
+          "ComparisonOperator": "GREATER_THAN",
+          "Threshold": 0.01,
+          "ThresholdType": "ABSOLUTE_VALUE",
+          "NotificationState": "OK"
+        }
+      ],
+      "subscriber_counts": [
+        3
+      ]
+    }
+  ]
+}
