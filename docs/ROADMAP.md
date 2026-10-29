@@ -102,3 +102,10 @@ Native ECR scan is unsupported for this image; local Trivy remains required.
 - [ ] Actual ECR/CI/deployment/cleanup screenshots; browser automation blocked by URL-confidence safety check.
 
 - [x] Diagnose actual OIDC failure and apply exact immutable repo/main trust correction; successful rerun still pending.
+
+### 2026-10-29 live validation
+- [x] Real passing security/OIDC image-publication workflow (40864000531).
+- [x] ECS service, operator /32 ingress and CPU alarm deployed.
+- [x] Actual one-task health, both HTTP 200 endpoints, logs and alarm OK evidenced.
+- [~] Controlled bad release and recovery in progress.
+- [ ] CI-driven new task revision, teardown verification, final case study/cost review and missing screenshots.

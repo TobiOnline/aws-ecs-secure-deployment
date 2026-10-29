@@ -1,0 +1,16 @@
+{
+  "started": "2026-10-29T12:16:50.238275+01:00",
+  "completed": "2026-10-29T12:18:35.446193+01:00",
+  "region": "eu-north-1",
+  "created": [
+    "aws_cloudwatch_metric_alarm.cpu[0]",
+    "aws_ecs_service.app[0]",
+    "aws_ecs_task_definition.app[0]",
+    "aws_vpc_security_group_ingress_rule.demo[0]"
+  ],
+  "service_steady_state": true,
+  "desired_tasks": 1,
+  "client_ingress": "current operator /32 only",
+  "failsafe": "local process scales to zero after 45 minutes; not an AWS hard billing cap",
+  "image_digest": "sha256:6c34f20dcc13faeb3fe893f64536086ec38d3a2007030798a6069e40d875e672"
+}

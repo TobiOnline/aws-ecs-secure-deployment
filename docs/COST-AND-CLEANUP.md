@@ -111,3 +111,6 @@ Only approved foundation and private image storage exist; no Fargate task/public
 Pipeline is prepared but not triggered; local ephemeral runner chosen to avoid hosted compute
 charges. No runner registered. Actual-charge target under USD 1 remains accepted, not guaranteed.
 Native BASIC scan unsupported, no Inspector/enhanced scan enabled.
+
+### 2026-10-29 billable task window
+Fargate service started under approved actual-charge target, operator /32 only. Precise start timestamp in service-applied evidence. Local finite scale-to-zero failsafe active after 45 minutes; not guaranteed through PC/network failure and not a billing cap. Rolling updates/fault simulation can temporarily run two tasks. No ALB, NAT, SNS or Container Insights. Teardown follows live validation; no screenshot waiting.

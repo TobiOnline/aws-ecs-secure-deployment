@@ -186,3 +186,6 @@ All remaining demo/fault/teardown permissions explicitly approved, with under-US
 
 ## 2026-10-29 OIDC correction - latest
 Run 40862493388 attempt 1 failed role assumption because this new repo uses immutable GitHub subject IDs. Exact main-only trust corrected and applied; no access expansion. Rerun in progress. Prepared finite local 45-minute scale-to-zero failsafe for subsequent app run, but no task running yet. Next: verify rerun, deploy remaining four approved resources, collect/recover/CI-deliver and promptly teardown.
+
+## 2026-10-29 deployed demo - latest
+Passing OIDC publication workflow 40864000531 succeeded. All 16 project Terraform resources now applied. Initial service has one healthy running task, revision 1, successful HTTP endpoints, logs and CPU alarm OK. Controlled fault/recovery script currently running; do not interrupt with a concurrent service update. Finite 45-minute local guard active. Next: verify recovery, run a final CI-driven task revision deployment, collect evidence and execute approved teardown immediately. Screenshots missing unless user supplies them; never delay cleanup for screenshots.

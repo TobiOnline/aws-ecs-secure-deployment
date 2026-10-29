@@ -25,12 +25,14 @@ aws("ecs", "update-service", "--cluster", "aws-ecs-secure-deployment", "--servic
 print("Controlled failing revision registered:", bad["revision"], flush=True)
 observed = False
 automatic = False
+saw_bad_revision = False
 for attempt in range(28):
     current = service()
+    saw_bad_revision = saw_bad_revision or any(d["taskDefinition"] == bad["taskDefinitionArn"] for d in current["deployments"])
     observed = observed or any(d.get("rolloutState") == "FAILED" for d in current["deployments"])
     observed = observed or any("failed" in e["message"].lower() or "circuit breaker" in e["message"].lower() for e in current.get("events", [])[:8])
     primary = next(d for d in current["deployments"] if d["status"] == "PRIMARY")
-    if primary["taskDefinition"] == good and primary.get("rolloutState") == "COMPLETED":
+    if saw_bad_revision and observed and primary["taskDefinition"] == good and primary.get("rolloutState") == "COMPLETED":
         automatic = True
         break
     if attempt % 2 == 0:

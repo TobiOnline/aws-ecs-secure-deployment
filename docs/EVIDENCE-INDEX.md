@@ -122,3 +122,7 @@ Screenshot automation attempted but stopped safely at browser URL-confidence bou
 
 | evidence/commands/2026-10-29-ci-oidc-trust-failure.json | Saved first passing-run attempt failure; all checks passed, AWS credentials denied |
 | evidence/commands/2026-10-29-oidc-subject-correction.json | Verified immutable repo/main subject and one scoped role-trust correction applied |
+
+| evidence/commands/2026-10-29-ci-passing-publication.json | Real successful security/OIDC/ECR publication workflow 40864000531 |
+| evidence/commands/2026-10-29-service-applied.json | Four approved service/ingress/alarm creates applied; operator IP omitted |
+| evidence/commands/2026-10-29-initial-deployment.json | Real healthy task, HTTP 200 endpoints, sanitized CloudWatch messages and CPU alarm OK |
