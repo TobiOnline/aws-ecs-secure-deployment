@@ -114,3 +114,19 @@ Native BASIC scan unsupported, no Inspector/enhanced scan enabled.
 
 ### 2026-10-29 billable task window
 Fargate service started under approved actual-charge target, operator /32 only. Precise start timestamp in service-applied evidence. Local finite scale-to-zero failsafe active after 45 minutes; not guaranteed through PC/network failure and not a billing cap. Rolling updates/fault simulation can temporarily run two tasks. No ALB, NAT, SNS or Container Insights. Teardown follows live validation; no screenshot waiting.
+
+## 2026-10-29 verified teardown and observed estimate
+All 16 managed resources and 12 image manifests removed. Independent verification confirms
+no running project workload/repository/log group/alarm/security group/active task revisions,
+project roles or GitHub provider. State empty, temporary runners absent, delivery-role secret
+removed. Default VPC/Identity Center/shared ECS service-linked role intentionally preserved.
+Inactive task-definition history may remain as non-billable metadata.
+
+Six task lifetimes yield conservative compute+IPv4 estimate USD 0.01150609, using created-to-stopped
+durations and one-minute minimum. Excludes ECR, logs, alarm, data transfer and taxes; actual
+bill can lag. This is an estimate, not confirmation of final total under USD 1.
+Task timestamps and rates recorded in task-cost-estimate evidence. No static AWS keys used.
+
+Next action after billing updates: inspect Bills by ECS/Fargate, VPC IPv4, ECR and CloudWatch,
+record final amount and timestamp here. Existing budget alert remains account-level and does
+not cap spending. No deployment is necessary for cost review.

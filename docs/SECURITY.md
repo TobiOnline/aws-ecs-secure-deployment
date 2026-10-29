@@ -81,3 +81,18 @@ Repository uses immutable default subject from GitHub API, confirmed by STS Clou
 
 ### 2026-10-29 task-definition metadata scope
 Observed CI failure confirmed DescribeTaskDefinition evaluates resource *. Like RegisterTaskDefinition it has no resource-level entry in AWS authorization table. Both actions use Resource * with aws:RequestedRegion eu-north-1; ECR, service update and PassRole remain scoped. This allows metadata reads of known task families in Stockholm, not only this family, and is documented as a residual scope limitation. No list/task-run/admin access added. Source: https://docs.aws.amazon.com/service-authorization/latest/reference/list_ecs.html .
+
+## Final threat-model and cleanup review
+| Threat | Implemented control | Remaining limitation |
+|---|---|---|
+| Long-lived AWS keys in CI | SSO locally, OIDC main-only immutable subject; no static keys | Bootstrap SSO admin access is broader than workload roles |
+| Workflow/repo takeover | Manual main workflow, pinned actions/assets, exact immutable OIDC trust | Trusted maintainers can change main; self-hosted runner is not a sandbox |
+| Overprivileged workload | Task role has no policies; execution ECR/logs scoped; CI PassRole/service scoped | Task-definition registration/read APIs require region-limited Resource * |
+| Vulnerable runtime | Non-root/read-only/capabilities dropped, Trivy and runtime audit | 44 unpatched HIGH OS findings; temporary demo acceptance only |
+| Network exposure | Operator /32, short-lived HTTP, no confidential data | No TLS/domain/authentication or availability guarantee |
+| Cost runaway | Small task, no ALB/NAT, budget, finite local guard, verified teardown | Billing lag and host failure mean no guaranteed USD 1 cap |
+
+Project IAM/OIDC/resources removed; stale role identifier secret and ephemeral runner
+registrations cleared. Account Identity Center/MFA/default VPC/shared role untouched.
+Git history and tracked-text credential checks are run at release close; do not claim
+production readiness or that missing MFA screenshots were independently verified.

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-29",
+  "run_id": 40866951465,
+  "source_commit": "c9cb57ac487f0b2927587bc9dde3b38a9ff5c3f7",
+  "image_tag": "c9cb57ac487f0b2927587bc9dde3b38a9ff5c3f7-5-1",
+  "image_digest": "sha256:e5453599cc8bba1feb236c878eaf7df386e10416122de97308e29ab5e7013008",
+  "service_task_revision": 3,
+  "requested_digest_matches_published_image": true,
+  "running": 1,
+  "pending": 0,
+  "container_user": "10001:10001",
+  "read_only_root": true
+}

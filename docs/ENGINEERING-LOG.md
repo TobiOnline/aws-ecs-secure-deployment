@@ -214,3 +214,25 @@ Corrected publication workflow 40864000531 passed all steps, including actual OI
 
 ## 2026-10-29 - Recovery proven and delivery metadata permission corrected
 Controlled revision 2 exited code 1; observed three stopped failed tasks during rollout, while healthy revision 1 remained running. ECS automatically restored revision 1; recovery HTTP/health/log/alarm checks pass (incident/recovered evidence). Final CI run 40865452609 passed security/OIDC/publication but DescribeTaskDefinition was denied on resource *. AWS service-authorization table confirms no resource-level scope for that read API. Corrected only the existing delivery policy: DescribeTaskDefinition joins RegisterTaskDefinition with wildcard resource and Stockholm region condition; other ECR/service/PassRole scopes unchanged. Retry tags now include run attempt. No admin role granted. Guarded cleanup supports index-manifest dependency retries and captures conservative task-lifetime estimate before cluster deletion.
+
+## 2026-10-29 - End-to-end delivery, teardown and closeout
+Final CI run 40866951465 passed all steps and deployed revision 3 from source c9cb57a.
+Published/requested/runtime digest matches recorded in end-to-end-version and final-deployment
+evidence. Healthy task, both HTTP 200 endpoints, logs and alarm OK verified before teardown.
+31 real CPU datapoints preserved. No public downtime claimed during the prior automatic rollback.
+
+Executed approved project-only teardown: scaled service to zero, waited for tasks stopped,
+captured six task lifetimes, removed 12 image manifests, destroyed all 16 managed resources and
+deregistered two non-Terraform project revisions. Independent inventory confirms 0 clusters,
+repositories, project log groups/alarms/security groups/active task revisions; all three project
+roles and GitHub provider absent; Terraform managed state empty. Default VPC remains.
+Temporary runner registrations absent, stale delivery role secret removed; finite local guard
+stopped after verification. Default network, Identity Center and shared service role preserved.
+
+Conservative observed compute/IPv4 estimate USD 0.01150609; other fees/tax excluded and actual
+AWS bill delayed. No zero-cost or hard-cap claim. Case study/architecture/runbook updated.
+Live cloud/CI screenshots are still missing; screenshot automation stopped safely and no paid
+runtime was kept waiting for visuals. Original MVP outcomes 1-6 verified; outcome 7 partial
+for final billing/visual evidence (6/7 = 86% rounded). Release v0.1.0-demo prepared at close.
+
+Release-close checks observed: six app tests passed, pip check clean, lint passed across app/tests/scripts, Terraform fmt/validate passed, Gitleaks full Git-history report has zero findings. Targeted candidate-text scan found no AWS account identifier/access-key/private-key patterns. Ignored operational state/plan files restricted to owner-only permissions where controlled.

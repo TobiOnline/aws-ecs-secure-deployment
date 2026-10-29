@@ -19,7 +19,7 @@ tasks = aws("ecs", "list-tasks", "--cluster", "aws-ecs-secure-deployment", "--se
 result = {"time": datetime.now(ZoneInfo("Africa/Lagos")).isoformat(), "region": "eu-north-1", "service_status": service["status"], "desired": service["desiredCount"], "running": service["runningCount"], "pending": service["pendingCount"], "deployments": [{"status": d["status"], "revision": int(d["taskDefinition"].rsplit(":", 1)[1]), "rollout": d.get("rolloutState")} for d in service["deployments"]]}
 if tasks:
     details = aws("ecs", "describe-tasks", "--cluster", "aws-ecs-secure-deployment", "--tasks", *tasks)["tasks"]
-    result["task_health"] = [{"status": t["lastStatus"], "health": t.get("healthStatus"), "container_health": [c.get("healthStatus") for c in t["containers"]]} for t in details]
+    result["task_health"] = [{"status": t["lastStatus"], "health": t.get("healthStatus"), "container_health": [c.get("healthStatus") for c in t["containers"]], "resolved_image_digests": [c.get("imageDigest") for c in t["containers"]]} for t in details]
     eni = next(d["value"] for a in details[0]["attachments"] for d in a.get("details", []) if d["name"] == "networkInterfaceId")
     interface = aws("ec2", "describe-network-interfaces", "--network-interface-ids", eni)["NetworkInterfaces"][0]
     address = interface.get("Association", {}).get("PublicIp")

@@ -35,8 +35,11 @@ while ECS recorded failed replacement tasks. The circuit breaker automatically r
 revision 1 between 12:20 and 12:25 Africa/Lagos on October 29. Recovery evidence confirms HTTP 200
 and healthy task state. No public downtime is claimed.
 
-Final CI-driven task-revision delivery and teardown are still in progress at this draft checkpoint.
-The final section must be updated with observed results before claiming completion.
+Final workflow 40866951465 passed end to end, published an immutable version and deployed
+revision 3. The requested ECS digest matched the published digest, the task was healthy and
+both endpoints returned HTTP 200. Teardown removed 16 managed resources and 12 ECR manifests;
+independent regional/global checks confirmed project removal and empty Terraform state.
+Default VPC, Identity Center and shared service roles were preserved.
 
 ## Failures and lessons
 - New GitHub repositories use immutable OIDC subjects. A legacy name-only trust condition
@@ -44,6 +47,8 @@ The final section must be updated with observed results before claiming completi
   the correction retained exact repository/main trust without wildcard expansion.
 - A root-owned scanner cache broke a reused runner checkout. Scanner runs now use the host
   UID/GID, isolated cache and unique ephemeral workspaces.
+- DescribeTaskDefinition has no resource-level scope in AWS IAM. The initial ARN-filtered read was denied; the correction permits that API with a Stockholm region condition while ECR/service/PassRole remain scoped.
+- Terraform API-inserted defaults initially suggested a task replacement during a policy-only plan. Expected-change assertions stopped it; explicit defaults restored a policy-only change.
 - A delivery pipeline must use the active healthy task definition, not the latest registered
   family revision, because the latest registration can be the failed release.
 - Fargate temporary-volume behavior differs from local tmpfs. Dockerfile volume ownership
@@ -61,3 +66,8 @@ MFA setup was owner-reported and is separate from this workload's deployment con
 
 This is a learning demo: no TLS/custom domain, availability guarantee, production risk
 acceptance, external alarm notifications or enforced AWS spending cap. Final billing is delayed.
+
+## Cost and outcome
+Six observed task lifetimes produced a conservative compute-plus-IPv4 estimate of USD 0.01150609. This overcounts provisioning time and uses a one-minute minimum per task, but excludes ECR/logs/alarm/transfer/tax. It is not the AWS bill. Actual final billing remains pending. The owner accepted an under-USD-1 target, not a guaranteed cap.
+
+The cloud demonstration is complete and no workload remains running. Final portfolio closeout is partial: live cloud screenshots were not captured and delayed billing must be reviewed. No milestone or screenshot is fabricated. Tagged demo release: v0.1.0-demo; Git history records exact source and push state.

@@ -3,11 +3,11 @@
 - [x] Stage 0: personal workspace, baseline docs, private origin, push, accidental-directory absence and screenshot verified. Evidence: evidence/screenshots/00-personal-workspace-and-git.png; baseline ae4dec5, screenshot shows synced commit 42d59c2.
 - [x] Stage 1: Flask app, six passing tests, pinned dependencies, live Gunicorn validation and screenshot evidence saved. See evidence/test-results/01-* and evidence/screenshots/01-local-tests-health.png.
 - [x] Stage 2: digest-pinned non-root container built; restricted runtime/health/HTTP checks pass; scan remediations and remaining findings documented. Screenshot: evidence/screenshots/02-docker-running-and-scan.png; reports: evidence/test-results/02-*; implementation fe709b0.
-- [ ] Stage 3: approved AWS cost/IAM foundation, private ECR and immutable image evidence.
-- [ ] Stage 4: approved temporary ECS deployment, network controls, service health and logs.
-- [ ] Stage 5: OIDC CI/CD, passing and blocked workflows, gated deployment evidence.
-- [ ] Stage 6: monitoring, reversible incident, diagnosis and verified rollback.
-- [ ] Stage 7: security review, case study, release, cleanup verification and cost review.
+- [~] Stage 3: ECR foundation and immutable images implemented/verified; removed after demo; cloud screenshot closeout missing.
+- [~] Stage 4: actual healthy Fargate revisions and HTTP checks verified; workload removed; cloud screenshots missing.
+- [~] Stage 5: real failing/passing OIDC CI and final revision-3 delivery verified; workflow screenshots missing.
+- [~] Stage 6: real failed rollout, automatic rollback, logs/metrics and alarm verified; screenshots missing.
+- [~] Stage 7: teardown, independent inventory, secret review and case study completed; final bill and visual evidence closeout pending.
 
 Each stage remains partial until its validation, documentation, evidence, commit, push and session-state requirements are addressed.
 
@@ -32,10 +32,10 @@ Terraform is a newly requested requirement and is not counted as already complet
 - [ ] Define least-privilege execution, task and GitHub OIDC roles; restrict trust to intended repository/ref/environment. Existing AdministratorAccess is bootstrap only. IAM changes require explicit approval.
 - [ ] Stage 3 completion: approved private ECR repository, versioned image push and digest evidence. Depends on approved foundation plan and refreshed image scan.
 - [ ] GitHub Actions: pinned actions, tests/lint, secret/dependency/image scans, OIDC push and gated deploy; demonstrate passing and deliberately blocked runs. Cloud delivery depends on approved roles/ECR; local workflow authoring can proceed earlier.
-- [ ] Stage 4: approved short-lived ECS Fargate rollout in eu-north-1, restricted access, healthy service and external endpoint checks where approved. Depends on ECR image, roles and reviewed network/cost plan.
+- [~] Stage 4: actual healthy Fargate revisions and HTTP checks verified; workload removed; cloud screenshots missing.
 - [ ] Stage 6 monitoring/recovery: CloudWatch logs, justified alarm, controlled fault and rollback; collect dated before/during/after evidence. Depends on healthy deployment and approved simulation.
 - [ ] End-to-end release validation: new image/task revision delivered through CI; verify controls and document limitations.
-- [ ] Stage 7: approved teardown, verify all project-created resources across relevant regions/services, review delayed costs, finalize runbook/diagram/case study, secret/history review and tagged release.
+- [~] Stage 7: teardown, independent inventory, secret review and case study completed; final bill and visual evidence closeout pending.
 
 At each meaningful checkpoint update engineering log, evidence index and session state.
 No apply, IAM changes, paid resources or destructive cleanup without the user's explicit approval.
@@ -112,3 +112,15 @@ Native ECR scan is unsupported for this image; local Trivy remains required.
 
 - [x] Real failed revision 2 and automatic recovery to healthy revision 1 evidenced.
 - [~] Final CI image publication passed; task update blocked by metadata-read permission, minimal correction applied/in progress.
+
+## 2026-10-29 final verified outcome
+- [x] Original MVP outcomes 1-6: local app/container, private image publication, healthy ECS,
+  CloudWatch/failure recovery and real gated OIDC CI/CD demonstrated.
+- [x] Successful final delivery to revision 3; exact digest and HTTP health verified.
+- [x] Approved teardown of 16 resources/12 manifests and independent inventory/state verification.
+- [x] Temporary runners/role secret removed; shared/default account infrastructure preserved.
+- [x] Case study, observed architecture, security limitations and replay/cleanup instructions.
+- [~] Outcome 7 closeout: release/tag and secret/history checks completed at batch close;
+  delayed final cost and missing cloud/CI screenshots remain.
+Progress: 6/7 complete acceptance outcomes = 86% rounded, not an estimate of engineering hours.
+No cloud work remains running and no redeployment is needed for billing review.

@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-29",
+  "tracked_and_candidate_text_files": 98,
+  "account_identifiers_found": 0,
+  "targeted_credential_patterns_found": 0,
+  "private_state_and_plan_permissions": "owner-only where controlled",
+  "note": "Targeted text check complements full Gitleaks Git-history scan; images were separately redacted/inspected."
+}

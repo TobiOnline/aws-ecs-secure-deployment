@@ -1,6 +1,6 @@
-# Proposed ECS learning deployment - 2026-10-29
+# ECS learning deployment - observed October 29, 2026
 
-Status: proposed and locally validated; NOT DEPLOYED. No Terraform apply performed.
+Status: deployed, validated and torn down. The design sections below preserve the initial proposal; the dated observed outcome is authoritative.
 
 The tested app will be uploaded to private ECR, then ECS Fargate will run one copy.
 CloudWatch receives logs. GitHub will use short-lived OIDC credentials rather than stored
@@ -51,3 +51,6 @@ each require concrete approval. Credit/expiry and budget delivery still unverifi
 - https://aws.amazon.com/fargate/pricing/
 - https://aws.amazon.com/vpc/pricing/
 - https://aws.amazon.com/ecr/pricing/
+
+## Observed outcome - October 29
+The diagram path was exercised: manual main workflow -> OIDC -> private ECR -> ECS Fargate -> CloudWatch. One healthy task served both JSON endpoints. Controlled revision 2 failed and automatically rolled back to revision 1. Final CI delivered revision 3. All 16 Terraform-managed resources and project images were removed and inventory verified. No live endpoint remains. Immutable GitHub subject IDs are required; metadata-read/registration APIs use region-limited wildcard scope as documented in SECURITY.md.

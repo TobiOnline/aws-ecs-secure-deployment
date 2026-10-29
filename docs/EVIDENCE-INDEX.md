@@ -132,3 +132,22 @@ Screenshot automation attempted but stopped safely at browser URL-confidence bou
 | evidence/commands/2026-10-29-recovered-service.json | Recovered HTTP/health/log/alarm validation |
 | evidence/commands/2026-10-29-ci-metadata-read-failure.json | Pipeline passed security/OIDC/push; read permission denied before service update |
 | evidence/commands/2026-10-29-delivery-metadata-permission.json | Required DescribeTaskDefinition scope corrected with Stockholm restriction |
+
+## 2026-10-29 final live and cleanup evidence
+| Evidence | Verified result |
+|---|---|
+| evidence/commands/2026-10-29-ci-final-deployment.json | Actual successful workflow 40866951465 and all step conclusions |
+| evidence/commands/2026-10-29-end-to-end-version.json | Source c9cb57a, immutable image tag/digest, active revision 3 match |
+| evidence/commands/2026-10-29-final-deployment.json | Actual healthy revision 3, HTTP 200, logs and CPU alarm OK |
+| evidence/commands/2026-10-29-cpu-metrics.json | 31 actual CPU datapoints |
+| evidence/commands/2026-10-29-teardown.json | 16 resources destroyed; 12 manifests removed; extra revisions deregistered |
+| evidence/commands/2026-10-29-task-cost-estimate.json | Six observed task lifetimes; conservative compute/IP estimate, not a bill |
+| evidence/commands/2026-10-29-cleanup-verification.json | Independent no-project-resource checks, empty state, runner/secret cleanup |
+
+Missing actual images: 03-ecr-image.png, 04-ecs-service-health.png,
+05-ci-passing-and-blocked.png, 06-cloudwatch-incident.png, 07-cleanup-verification.png.
+They were requested; no file is claimed saved. API evidence remains authoritative.
+GitHub run pages persist after teardown; live cloud images cannot be recreated retrospectively.
+
+| evidence/test-results/2026-10-29-history-secret-scan.json | Full Git-history Gitleaks scan: zero findings |
+| evidence/commands/2026-10-29-final-privacy-check.json | Candidate text/account/credential checks clean; local operational permissions restricted |

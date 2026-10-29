@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-29",
+  "region": "eu-north-1",
+  "tasks": [
+    {
+      "task_reference_hash": "c78d829060be",
+      "revision": 2,
+      "created": "2026-10-29T12:20:47.426000+01:00",
+      "stopped": "2026-10-29T12:21:25.740000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 60,
+      "estimated_compute_ipv4_usd": 0.00030958
+    },
+    {
+      "task_reference_hash": "16f641433adf",
+      "revision": 1,
+      "created": "2026-10-29T12:17:31.532000+01:00",
+      "stopped": "2026-10-29T12:43:40.179000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 1568.65,
+      "estimated_compute_ipv4_usd": 0.00809378
+    },
+    {
+      "task_reference_hash": "e73c3d4bf035",
+      "revision": 3,
+      "created": "2026-10-29T12:42:14.158000+01:00",
+      "stopped": "2026-10-29T12:49:15.496000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 421.34,
+      "estimated_compute_ipv4_usd": 0.00217399
+    },
+    {
+      "task_reference_hash": "d2aed90b9faf",
+      "revision": 2,
+      "created": "2026-10-29T12:22:22.225000+01:00",
+      "stopped": "2026-10-29T12:22:58.849000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 60,
+      "estimated_compute_ipv4_usd": 0.00030958
+    },
+    {
+      "task_reference_hash": "2243c9acbf03",
+      "revision": 2,
+      "created": "2026-10-29T12:21:29.239000+01:00",
+      "stopped": "2026-10-29T12:22:20.145000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 60,
+      "estimated_compute_ipv4_usd": 0.00030958
+    },
+    {
+      "task_reference_hash": "1a351ddd00b1",
+      "revision": 2,
+      "created": "2026-10-29T12:23:03.380000+01:00",
+      "stopped": "2026-10-29T12:23:39.755000+01:00",
+      "status": "STOPPED",
+      "conservative_seconds": 60,
+      "estimated_compute_ipv4_usd": 0.00030958
+    }
+  ],
+  "conservative_compute_ipv4_estimate_usd": 0.01150609,
+  "not_final_bill": true,
+  "assumptions": "Charges estimated for entire created-to-stopped interval (conservative versus pull start); minimum 60 seconds per task; no credits assumed. Excludes ECR/logs/alarm/transfer/tax. Actual billing can lag."
+}

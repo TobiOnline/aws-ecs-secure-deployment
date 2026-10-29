@@ -1,0 +1,47 @@
+{
+  "time": "2026-10-29T12:52:29.784100+01:00",
+  "region": "eu-north-1",
+  "inventory": {
+    "ecs_clusters": {
+      "verified": true,
+      "count": 0
+    },
+    "ecr_repositories": {
+      "verified": true,
+      "count": 0
+    },
+    "project_log_groups": {
+      "verified": true,
+      "count": 0
+    },
+    "project_alarms": {
+      "verified": true,
+      "count": 0
+    },
+    "project_security_groups": {
+      "verified": true,
+      "count": 0
+    },
+    "active_project_task_definitions": {
+      "verified": true,
+      "count": 0
+    },
+    "default_vpcs": {
+      "verified": true,
+      "count": 1
+    }
+  },
+  "project_roles": {
+    "execution": "absent",
+    "task": "absent",
+    "github": "absent"
+  },
+  "github_oidc_providers": 0,
+  "terraform_managed_resources": 0,
+  "temporary_runners": 0,
+  "delivery_role_secret_removed": true,
+  "cost_guard_stopped_after_verification": true,
+  "default_vpc_identity_center_shared_service_roles": "preserved",
+  "inactive_task_definition_history": "deregistered metadata may remain; no running tasks/active project revisions",
+  "scope": "Project resources plus named regional services; not an account-wide all-service audit"
+}

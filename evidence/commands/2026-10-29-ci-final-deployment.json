@@ -1,0 +1,104 @@
+{
+  "conclusion": "success",
+  "databaseId": 40866951465,
+  "headSha": "c9cb57ac487f0b2927587bc9dde3b38a9ff5c3f7",
+  "jobs": [
+    {
+      "completedAt": "2026-10-29T11:44:12Z",
+      "conclusion": "success",
+      "databaseId": 123424015663,
+      "name": "validate-and-deliver",
+      "startedAt": "2026-10-29T11:38:39Z",
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install pinned Python dependencies",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Lint",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "skipped",
+          "name": "Inject deliberate failing test when requested",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Tests",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Scan repository history for secrets",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Audit pinned runtime dependencies",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Build and verify hardened image",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Obtain short-lived AWS credentials",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Publish and optionally deploy",
+          "number": 11,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Obtain short-lived AWS credentials",
+          "number": 21,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 22,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 23,
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/TobiOnline/aws-ecs-secure-deployment/actions/runs/40866951465/job/123424015663"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/TobiOnline/aws-ecs-secure-deployment/actions/runs/40866951465"
+}

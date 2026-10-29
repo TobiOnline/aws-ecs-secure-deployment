@@ -1,4 +1,4 @@
-# Terraform proposal - not applied
+# Terraform implementation - demo applied and torn down
 
 Tooling: project-local Terraform 1.17.1; AWS provider 6.71.0 locked in .terraform.lock.hcl.
 Workload region eu-north-1; local AWS_PROFILE=tobi-admin uses SSO.
@@ -72,3 +72,8 @@ export sanitized evidence first. Retention does not remove a log group.
 Do not remove shared/default infrastructure or Identity Center.
 
 Sources: docs/ARCHITECTURE.md and docs/COST-AND-CLEANUP.md.
+
+## Observed execution and current state
+Foundation (9), OIDC (3) and service/ingress/alarm (4) resources were applied: 16 total. The old 15-resource illustrative count predates the added CPU alarm. All 16 were destroyed; state is empty. Default network/shared service roles remain. API defaults are explicit to prevent false replacement plans. GitHub trust uses the repository's verified immutable subject. Both ECS registration and metadata read require Resource * with Stockholm restriction. Actual final evidence is indexed under docs/.
+
+Use python3 scripts/install-terraform.py in a fresh Linux x86_64 clone. Provider lockfile is committed; state and raw plans remain private/ignored. No re-apply is authorized merely by these replay instructions.

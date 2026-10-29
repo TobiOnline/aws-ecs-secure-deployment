@@ -1,0 +1,8 @@
+{
+  "time": "2026-10-29T12:50:21.080776+01:00",
+  "terraform_resources_destroyed": 16,
+  "image_digests_deleted": 12,
+  "project_revisions_deregistered": 2,
+  "default_vpc_and_identity_center_preserved": true,
+  "independent_inventory_still_required": true
+}

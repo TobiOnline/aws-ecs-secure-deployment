@@ -16,6 +16,9 @@ while time.monotonic() < deadline:
             (root / ".cache/cost-guard-status").write_text("Service removed; guard exited")
             raise SystemExit(0)
         seen = seen or active
+    if seen and result.returncode != 0 and "ClusterNotFoundException" in result.stderr:
+        (root / ".cache/cost-guard-status").write_text("Cluster removed; guard exited")
+        raise SystemExit(0)
     time.sleep(30)
 if seen:
     result = subprocess.run(["aws", "ecs", "update-service", "--cluster", "aws-ecs-secure-deployment", "--service", "aws-ecs-secure-deployment", "--desired-count", "0", "--profile", "tobi-admin", "--region", "eu-north-1", "--no-cli-pager"], capture_output=True, text=True, check=False)

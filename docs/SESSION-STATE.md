@@ -1,5 +1,7 @@
 # Session state
 
+Current handoff: see the final operational handoff dated October 29 below. No demo workload remains running; earlier snapshots are historical.
+
 Date: 2026-10-28 (Africa/Lagos)
 Stage: 3 - preflight; Stages 0, 1 and 2 COMPLETE.
 
@@ -192,3 +194,33 @@ Passing OIDC publication workflow 40864000531 succeeded. All 16 project Terrafor
 
 ## 2026-10-29 recovery and final delivery retry
 Automatic rollback proven: bad revision 2 exit 1 rejected, revision 1 restored and HTTP 200 verified. Final CI publication succeeded but metadata read denied before service update; correcting required API-wide read with Stockholm-only condition. Existing healthy service remains revision 1. Next: fresh final deployment workflow with corrected policy/code; after success collect evidence and run approved teardown. Local 45-minute scale-zero guard remains active.
+
+## 2026-10-29 final operational handoff - authoritative current state
+Technical demo complete; cloud resources cleaned up. Portfolio closeout PARTIAL.
+Original MVP outcomes 1-6 verified; final cost/evidence outcome partial: 6/7 = 86% rounded.
+
+Final passing deployment workflow: 40866951465. Delivered healthy revision 3, exact image digest
+match and both endpoints HTTP 200. Prior controlled revision 2 failed and automatically
+restored revision 1. All security checks, history scan and runtime audit exercised.
+Native ECR scan unsupported; 44 unpatched HIGH Trivy findings documented/accepted for demo.
+
+Teardown removed all 16 Terraform-managed resources and 12 manifests; extra project task
+revisions deregistered. Independent cleanup evidence confirms no project workload, IAM/OIDC,
+log/alarm/security-group resources; state empty; no temporary runner or stale role secret.
+Default VPC/Identity Center/shared service role remain. No live app endpoint.
+Local finite cost guard stopped after verification. Do not recreate resources without new approval.
+
+Compute+IPv4 conservative estimate USD 0.01150609; excludes ancillary fees/tax. Final bill pending.
+Evidence: end-to-end-version, final-deployment, ci-final-deployment, incident-recovery,
+cpu-metrics, teardown, task-cost-estimate and cleanup-verification JSON files under
+evidence/commands/2026-10-29-*.
+Source/operations docs and demo release tag v0.1.0-demo are finalized at batch close;
+consult Git history/tag and origin for exact commit/push identity.
+
+Remaining work needs no running AWS app:
+1. After billing updates, review final project-service charges in AWS Billing and record result.
+2. Capture real GitHub workflow screenshots; cloud runtime screenshots were not captured before
+   teardown. Record missing images honestly; no redeploy merely for screenshots without approval.
+3. Account MFA screenshots and AWS Support credit-review outcome remain separate
+   account-setup evidence, not proof of application deployment.
+Previous snapshots above are retained as history; this section supersedes deployment blockers.

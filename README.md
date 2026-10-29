@@ -3,10 +3,19 @@
 Personal DevSecOps portfolio project: build, secure, deploy, monitor and tear down a small Flask application on ECS Fargate.
 
 ## Status
-Stages 0-2 complete with local screenshots and runtime/scan evidence. AWS CLI/SSO and Stockholm inventory verified on October 29; Stage 3 is partial. No project workload deployed. See docs/SESSION-STATE.md for the current dated handoff and docs/SECURITY.md for remaining image findings.
+Cloud demonstration completed and torn down on October 29, 2026:
+six app tests, a non-root container, real failing/passing security workflows, OIDC image
+publication, healthy ECS revision 3, CloudWatch logs/CPU alarm and automatic rollback from
+a controlled failed release were verified. All 16 Terraform-managed resources were removed;
+independent inventory and empty state confirmed. No demo service remains online.
+
+Conservative compute + IPv4 estimate: USD 0.01150609, excluding logs/storage/alarm/transfer/tax.
+Final AWS billing is pending. Cloud screenshots are missing; sanitized API evidence and real
+workflow links are indexed in docs/EVIDENCE-INDEX.md. Original MVP outcomes 1-6 are verified;
+final cost/evidence closeout remains partial (6/7 outcomes, rounded 86%).
 
 ## Scope
-Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request. Version 1.17.1 is installed locally and the proposed configuration is validated; no infrastructure has been applied.
+Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request. Version 1.17.1 and the locked AWS provider describe the deployed-and-removed infrastructure.
 
 See docs/SESSION-STATE.md for the verified handoff and docs/ROADMAP.md for acceptance gates.
 
@@ -50,8 +59,7 @@ bash scripts/scan-image.sh
 
 The verification script starts a temporary container bound only to localhost, checks health,
 UID 10001 and both endpoints, then removes the container. It tests a read-only filesystem,
-dropped Linux capabilities and no-new-privileges. An app-owned runtime volume is checked locally to prepare for Fargate. Those runtime settings must also be
-applied explicitly in future deployments; the Dockerfile alone does not enforce them.
+dropped Linux capabilities and no-new-privileges. An app-owned runtime volume is checked locally to prepare for Fargate. Fargate used read-only root, UID 10001 and dropped capabilities; local no-new-privileges is not a supported Fargate setting. See docs/SECURITY.md for the differences.
 The image exposes port 8000, logs to stdout/stderr and runs Gunicorn with one worker.
 
 The base is the official Python 3.14 slim trixie image pinned by digest (container Python
@@ -64,5 +72,12 @@ without Docker-socket access. Large image archives and vulnerability DB cache re
 under .cache/. The gate fails on fixable HIGH/CRITICAL findings; a passing gate does not
 mean there are no vulnerabilities. Review the full report and security notes before deployment.
 
-## Proposed infrastructure
-See [architecture](docs/ARCHITECTURE.md) and [Terraform instructions](infrastructure/terraform/README.md). Run bash scripts/verify-infrastructure.sh for local validation. Terraform state, plans and tooling are ignored; .terraform.lock.hcl is committed. Infrastructure, GitHub OIDC and deployment remain proposals awaiting explicit approval.
+## Infrastructure and replay
+See [architecture](docs/ARCHITECTURE.md) and [Terraform instructions](infrastructure/terraform/README.md). Run bash scripts/verify-infrastructure.sh for local validation. Terraform state, plans and tooling are ignored; .terraform.lock.hcl is committed. The implementation was applied, validated and destroyed. Recreating it incurs charges and requires renewed cost/exposure approval; see infrastructure/terraform/README.md and docs/RUNBOOK.md.
+
+## Demonstrated delivery
+- [Intentional test failure blocks delivery](https://github.com/TobiOnline/aws-ecs-secure-deployment/actions/runs/40862041799)
+- [Passing security/OIDC publication](https://github.com/TobiOnline/aws-ecs-secure-deployment/actions/runs/40864000531)
+- [Successful end-to-end ECS revision delivery](https://github.com/TobiOnline/aws-ecs-secure-deployment/actions/runs/40866951465)
+
+Read docs/FINAL-CASE-STUDY.md for outcomes, failures, limitations and cost/cleanup evidence.
