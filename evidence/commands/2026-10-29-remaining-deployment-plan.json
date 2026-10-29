@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-29T11:49:26.171443+01:00",
+  "region": "eu-north-1",
+  "applied": false,
+  "image_digest": "sha256:6c34f20dcc13faeb3fe893f64536086ec38d3a2007030798a6069e40d875e672",
+  "ingress": "Current operator IPv4 /32 only; actual IP withheld",
+  "changes": [
+    {
+      "address": "aws_ecs_service.app[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecs_task_definition.app[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_openid_connect_provider.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role_policy.github[0]",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_vpc_security_group_ingress_rule.demo[0]",
+      "actions": [
+        "create"
+      ]
+    }
+  ]
+}

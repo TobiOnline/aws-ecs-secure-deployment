@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-29",
+  "region": "eu-north-1",
+  "actual_charge_target_usd": 1,
+  "hard_cap": false,
+  "registry_scanning": "BASIC",
+  "effective_subnet_route": "active IGW default verified",
+  "planned_changes": [
+    {
+      "address": "aws_cloudwatch_log_group.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecr_lifecycle_policy.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecr_repository.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_ecs_cluster.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.execution",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role.task",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_iam_role_policy.execution",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_security_group.app",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "aws_vpc_security_group_egress_rule.https",
+      "actions": [
+        "create"
+      ]
+    }
+  ],
+  "applied": true,
+  "apply_result": "9 added; no running app task or public endpoint; OIDC disabled"
+}

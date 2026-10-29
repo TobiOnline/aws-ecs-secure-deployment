@@ -153,3 +153,9 @@ possible actual charges, not credit consumption. Await user decision to authoriz
 USD 1 actual charges or contact AWS Billing Support to investigate credit status first.
 Do not provision pending this clarification. No AWS mutations in this batch.
 Evidence: evidence/commands/2026-10-29-billing-readiness.json.
+
+## 2026-10-29 authorization update
+User explicitly accepts actual charges targeting under USD 1, no guaranteed cap, short run and prompt teardown. Credit investigation no longer blocks the approved foundation. Refresh and validate the exact plan, then apply foundation only; no task/OIDC in initial apply.
+
+## 2026-10-29 foundation execution - current state
+User accepts actual charges targeting under USD 1, short deployment and prompt teardown. Approved nine-resource foundation applied; no Fargate task/public endpoint/OIDC yet. Tested image published; exact tag/digest in evidence/commands/2026-10-29-ecr-image.json. Terraform state is local/ignored: preserve it. Current next batch: commit prepared manual CI, run it on checksum-verified ephemeral local runner (no hosted compute), obtain approval for remaining seven-resource OIDC/service/alarm proposal and controlled recovery/teardown. Screenshot evidence missing for actual ECR/foundation.

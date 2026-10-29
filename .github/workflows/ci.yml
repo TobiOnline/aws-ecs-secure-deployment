@@ -1,0 +1,73 @@
+name: Secure delivery
+on:
+  workflow_dispatch:
+    inputs:
+      demonstrate_failure:
+        description: "Intentionally fail a test to prove delivery is blocked"
+        type: boolean
+        default: false
+      deliver:
+        description: "Publish the tested image using approved OIDC role"
+        type: boolean
+        default: false
+      deploy:
+        description: "Deploy to the existing approved service"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: ecs-secure-delivery
+  cancel-in-progress: false
+jobs:
+  validate-and-deliver:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, ecs-demo]
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install pinned Python dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements-dev.txt -r requirements-ci.txt -c requirements.txt
+      - name: Lint
+        run: .venv/bin/ruff check app tests
+      - name: Inject deliberate failing test when requested
+        if: inputs.demonstrate_failure
+        run: |
+          printf 'def test_deliberate_delivery_block():
+    assert False, "Expected demonstration: delivery must be blocked"
+' > tests/test_delivery_gate_demo.py
+      - name: Tests
+        run: bash scripts/verify-local.sh
+      - name: Scan repository history for secrets
+        run: |
+          python3 scripts/install-gitleaks.py
+          .tools/gitleaks git --redact --no-banner
+      - name: Audit pinned runtime dependencies
+        run: .venv/bin/pip-audit -r requirements.txt --no-deps --disable-pip
+      - name: Build and verify hardened image
+        run: |
+          docker build --label org.opencontainers.image.revision="$GITHUB_SHA" -t aws-ecs-secure-deployment:stage3 .
+          python3 scripts/verify-container.py
+          bash scripts/scan-image.sh
+      - name: Obtain short-lived AWS credentials
+        if: inputs.deliver && !inputs.demonstrate_failure
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          aws-region: eu-north-1
+          role-to-assume: ${{ secrets.AWS_DELIVERY_ROLE_ARN }}
+          role-session-name: github-ecs-demo
+          mask-aws-account-id: true
+          role-duration-seconds: 900
+      - name: Publish and optionally deploy
+        if: inputs.deliver && !inputs.demonstrate_failure
+        env:
+          APPROVED_DEPLOY: ${{ inputs.deploy }}
+        run: python3 scripts/ci-deliver.py

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-29",
+  "region": "eu-north-1",
+  "repository": "aws-ecs-secure-deployment",
+  "tag": "2da827256ee6294a36cec8688f3e7d5a714e6892",
+  "digest": "sha256:6c34f20dcc13faeb3fe893f64536086ec38d3a2007030798a6069e40d875e672",
+  "size_bytes": 45891433,
+  "pushed": true,
+  "scan_status": "not returned",
+  "ecr_scan_status": "query did not return findings"
+}

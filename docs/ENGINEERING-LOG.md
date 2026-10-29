@@ -180,3 +180,9 @@ IAM mutation, upgrade or support message sent.
 
 Official guidance: expired credits are unavailable for use:
 https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-credits.html
+
+## 2026-10-29 - Actual-charge authorization
+User selected 'Proceed with the under-$1 target' after explicit disclosure that final billing cannot be guaranteed and credits are unavailable. Authorized actual charges, short deployment window and prompt teardown. Previously approved foundation/IAM scope retained. No hard cap claimed.
+
+## 2026-10-29 - Approved foundation applied and image published
+Actual charges targeting under USD 1 explicitly accepted. Refreshed regional pricing and exact nine-create plan, verified BASIC ECR scanning and selected subnet effective IGW route, then applied foundation: nine added, no task/public endpoint/OIDC. Published tested stage3 image under commit-SHA tag; digest in evidence/commands/2026-10-29-ecr-image.json. ECR scan query did not return findings; local Trivy evidence remains separate. Local CI checks pass: lint, six tests, Gitleaks history and runtime dependency audit. Manual-only main workflow and delivery code prepared; no GitHub run yet. Screenshots pending.

@@ -95,3 +95,11 @@ Originals retained outside Git; amount/date/status pixels preserved.
 
 Budget threshold and plan are now API-verified despite missing dedicated screenshots.
 No claim of subscriber delivery or global zero spending.
+
+### 2026-10-29 live foundation and image evidence
+| Path | Status |
+|---|---|
+| evidence/commands/2026-10-29-approved-foundation.json | Applied: 9 resources; private sanitized plan summary |
+| evidence/commands/2026-10-29-ecr-image.json | Real immutable published image tag/digest/size; account identifiers omitted |
+| evidence/test-results/2026-10-29-ci-local-checks.txt | Local lint/tests/Gitleaks/runtime audit passed; not a GitHub run |
+| evidence/screenshots/03-ecr-image.png | MISSING; actual ECR publication now ready to capture |

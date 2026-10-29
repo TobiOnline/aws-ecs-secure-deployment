@@ -76,3 +76,10 @@ No OIDC/public-service/destructive approval inferred.
 - [x] Budget threshold verified: monthly actual cost greater than USD 0.01; subscriber configuration present.
 - [ ] Clarify authorization for actual charges up to USD 1 given zero usable Free Tier balance, or resolve credits with AWS Billing Support first.
 Foundation/IAM scope remains approved; no cloud changes made.
+
+### 2026-10-29 foundation execution
+- [x] Approved nine-resource foundation applied; no app task or public endpoint.
+- [x] Versioned image published to private ECR; digest recorded.
+- [~] Stage 3 implemented; screenshot evidence and final checkpoint push pending.
+- [~] Manual CI workflow authored; local lint/tests/history-secret/runtime dependency checks pass. Actual workflow runs pending.
+- [ ] Remaining OIDC, service, restricted ingress, alarm, recovery and teardown approvals/execution.

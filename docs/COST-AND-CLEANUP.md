@@ -102,3 +102,6 @@ Existing allowance and foundation approval retained. Need explicit clarification
 up to USD 1 actual charges because the earlier discussion anticipated promotional credits.
 Alternative: user contacts AWS Billing Support to investigate credit discrepancy; no support
 message authorized/sent by agent. No resources created or deleted.
+
+### 2026-10-29 actual-charge run started
+User explicitly accepts under-USD-1 operational target (no guaranteed cap). Nine-resource foundation applied, ~46 MB private ECR image stored. No Fargate running task/public endpoint yet. Existing default VPC/Identity Center not managed. Shared ECS service-linked role may have been created by ECS; preserve if shared. Runtime and teardown evidence will be added after actual execution.
