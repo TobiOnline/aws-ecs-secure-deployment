@@ -36,3 +36,21 @@ including findings without fixes; reassess this policy before production use.
 - https://hub.docker.com/_/python
 - https://www.trivy.dev/docs/latest/getting-started/installation/
 - https://github.com/aquasecurity/trivy/blob/main/docs/guide/target/container_image.md
+
+## 2026-10-29 AWS access audit
+
+SSO profile tobi-admin/session tobi-sso is configured for AdministratorAccess;
+current STS call succeeds. This broad role is existing bootstrap access, not least privilege
+for application tasks or GitHub Actions. No IAM settings changed in the audit.
+Root/admin MFA are user-reported; independent evidence pending.
+Workload region is eu-north-1; Identity Center is in us-east-1.
+Future OIDC trust and execution/task policies require explicit approval before application.
+
+Historical scan linkage verified: Trivy ImageID matches Docker archive configuration digest;
+ordered filesystem layers match current image. Docker inspect's manifest identity differs,
+so direct string comparison alone is insufficient. Findings remain historical October 28 data.
+Do not treat a fixable-only gate as an all-findings pass or suppress unpatched HIGH entries.
+Refresh before cloud rollout and document the risk decision.
+
+Terraform state, plans and provider/CLI caches must be excluded from Git before use.
+Commit reproducibility lockfiles as appropriate, never credentials or secret variable values.

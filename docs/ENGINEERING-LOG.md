@@ -42,3 +42,59 @@ Image ID and observed size are in 02-runtime.txt; screenshot pending.
 Next: capture Stage 2 screenshot, verify AWS access and prepare cost/resource approval.
 
 Stage 2 screenshot received and inspected; restricted runtime and severity summary visible. Saved evidence and marked Stage 2 complete with residual-risk documentation. User is new to AWS and reports possible USD 100 credits; credit balance/expiry/plan are not yet verified. Prioritize conserving credit and checking billing before resource creation.
+
+## 2026-10-29 - AWS account setup handoff and repository audit
+
+This entry records AWS environment setup separately from the completed local implementation.
+Previous entries remain historical facts at their recorded dates.
+
+User-reported setup: account TOBI, paid plan, USD 100 promotional credits initially available,
+root MFA enabled and administrator MFA enabled. These are handoff statements, not independent
+console verification; current credit balance/expiry, MFA screenshots and plan evidence are missing.
+
+Verified now: AWS CLI v2.39.1 installed in Ubuntu; profile tobi-admin uses SSO session tobi-sso;
+default workload region eu-north-1; Identity Center region us-east-1; configured role
+AdministratorAccess. STS identity request succeeded without saving identifiers or credentials.
+This confirms current CLI access, not the MFA enforcement or least privilege of that role.
+Identity Center/SSO configuration is present; no Identity Center settings were changed.
+
+Access troubleshooting: the handoff says setup/troubleshooting is complete, but does not provide
+the original AWS error or remediation sequence. Do not invent it. Current SSO and inventory
+calls succeed; no login/session blocker observed. Earlier Git SSH trouble remains a separate
+historical Git issue. A recursive file inventory hit permission denied in the ignored
+scanner-owned .cache/trivy/fanal directory; no permissions changed, and tracked-file inspection
+completed without traversing that cache.
+
+Billing protection: one Zero-named COST budget found with USD 1.00 budget amount and one
+notification rule. User calls this Zero Spend Budget. The name alone is not a zero-dollar
+spending limit; exact threshold, recipient delivery and treatment of credits are not verified.
+A budget is an alert, not a hard cap. No current promotional balance or charges were queried.
+
+Read-only Stockholm inventory: 0 ECS clusters, 0 ECR repositories, 0 EC2 instances,
+0 modern load balancers and 0 classic load balancers; 1 default VPC. This is limited to
+those services/region and does not establish zero account-wide charges.
+
+Local audit: read README and every existing docs file, Git history and all tracked implementation
+and evidence; baseline was feffb33 with clean main. Six tests and pip check pass again.
+Existing image runs healthy as UID 10001 with read-only root, dropped capabilities and both
+HTTP endpoints returning 200; temporary test container removed. Three existing PNG screenshots
+validated and hashed; no AWS screenshot added. Historical Trivy JSON recomputation matches
+44 HIGH, 58 MEDIUM, 61 LOW, 1 UNKNOWN, 0 CRITICAL. Scanner ImageID is the exported archive's
+config digest; Docker inspect shows a different manifest identity. Confirmed archive config
+reference and all ordered filesystem layers match; no evidence of a stale-image mismatch.
+Historical scan is dated October 28 and must be refreshed before rollout.
+
+Scope decision: user's October 29 request explicitly adds Terraform before deployment,
+superseding the guide's earlier optional/post-MVP timing. Terraform not found in PATH.
+No infrastructure, IAM security, account plan or billing settings changed in this audit.
+AdministratorAccess is the existing bootstrap access, not the proposed CI/workload permission model.
+
+Progress: 2 of 7 original MVP outcomes complete (28.6%, rounded to 29%); Stages 0-2 accepted,
+Stage 3 partial, Stages 4-7 not started. This ratio is a transparent acceptance count,
+not an estimate of remaining hours; Terraform adds work outside the original denominator.
+
+Evidence: evidence/commands/2026-10-29-project-audit.json.
+Next batch: project-local Terraform installation with verified download, proposed low-cost
+Stockholm architecture and local Terraform configuration/validation. Protect state/plan files
+from Git before generating them. Refresh scan and pricing, resolve credit/budget evidence,
+then request concrete IAM/provisioning approval before any cloud changes.

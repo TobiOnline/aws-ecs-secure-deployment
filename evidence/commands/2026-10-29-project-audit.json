@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Africa/Lagos",
+  "baseline_commit": "feffb33",
+  "local_checks": {
+    "pip_check": "passed",
+    "pytest": "6 passed",
+    "container": "healthy, UID 10001, endpoints HTTP 200, restricted runtime verified; temporary container removed",
+    "historical_scan_created_at": "2026-10-28T13:48:30.488685046Z",
+    "historical_severities": {
+      "LOW": 61,
+      "HIGH": 44,
+      "MEDIUM": 58,
+      "UNKNOWN": 1
+    },
+    "scan_identity": "scanner ImageID matches saved archive config; all ordered DiffIDs match current image RootFS layers; Docker inspect ID is a distinct manifest identity"
+  },
+  "environment_verified": {
+    "aws_cli": "2.39.1",
+    "python_host": "3.14.4",
+    "docker_server": "29.6.2",
+    "profile": "tobi-admin",
+    "sso_session": "tobi-sso",
+    "sso_region": "us-east-1",
+    "default_region": "eu-north-1",
+    "role_configured": "AdministratorAccess",
+    "sts_identity": "successful; identifiers deliberately omitted",
+    "terraform": "not found in PATH"
+  },
+  "aws_read_only": {
+    "region": "eu-north-1",
+    "ecs_clusters": 0,
+    "ecr_repositories": 0,
+    "ec2_instances": 0,
+    "elbv2_load_balancers": 0,
+    "classic_load_balancers": 0,
+    "default_vpcs": 1,
+    "zero_named_budgets": 1,
+    "budget_limit_usd": "1.0",
+    "budget_notification_rules": 1
+  },
+  "user_reported_not_independently_verified": [
+    "account label TOBI",
+    "root MFA enabled",
+    "administrator MFA enabled",
+    "paid plan",
+    "USD 100 promotional credits initially available",
+    "historical AWS access troubleshooting details"
+  ],
+  "limitations": [
+    "Inventory limited to named services in Stockholm; not an all-service or all-region spending audit.",
+    "Budget subscribers, delivery and credit cost filters not verified.",
+    "Remaining credit balance, expiry and actual charges unverified.",
+    "Historical scan validated, not refreshed against October 29 vulnerability DB.",
+    "No AWS setup screenshots supplied or saved."
+  ],
+  "screenshots": [
+    {
+      "path": "evidence/screenshots/00-personal-workspace-and-git.png",
+      "sha256": "8cd38494b16e41fbfda4e0bd10595370aeb60e7423e7173826dfdc979840d6fd",
+      "status": "valid PNG; contents reviewed in prior chat; present and tracked"
+    },
+    {
+      "path": "evidence/screenshots/01-local-tests-health.png",
+      "sha256": "b61fcecd8cb39b97e928b3218a6280166e5617db419faf9481c7ef5d3510ca53",
+      "status": "valid PNG; contents reviewed in prior chat; present and tracked"
+    },
+    {
+      "path": "evidence/screenshots/02-docker-running-and-scan.png",
+      "sha256": "c95e11f9b0847194d45cad8771982a26485582d6ccb680d5c8250a3929cab2db",
+      "status": "valid PNG; contents reviewed in prior chat; present and tracked"
+    }
+  ]
+}

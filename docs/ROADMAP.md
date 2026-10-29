@@ -10,3 +10,32 @@
 - [ ] Stage 7: security review, case study, release, cleanup verification and cost review.
 
 Each stage remains partial until its validation, documentation, evidence, commit, push and session-state requirements are addressed.
+
+## 2026-10-29 audited plan - current dependencies
+
+The earlier checklist remains the historical stage sequence. Stage 3 is now PARTIAL:
+CLI/SSO, regional inventory and budget presence verified; architecture, credits, least-privilege
+access and ECR image publication are incomplete. No deployed workload or CI/CD evidence exists.
+Audit source: evidence/commands/2026-10-29-project-audit.json.
+
+Progress measure: original MVP outcomes 1 and 2 complete; outcomes 3-7 incomplete:
+2/7 = 28.6% (rounded 29%). Stages 0-2 complete does not mean 3/8 of project effort.
+Terraform is a newly requested requirement and is not counted as already completed.
+
+- [x] Audit existing repo/history/docs, test evidence, screenshots and scan findings.
+- [x] Re-run six app tests, dependency check and hardened local container checks.
+- [x] Verify AWS CLI/SSO and Stockholm service inventory; confirm budget/rule presence.
+- [~] AWS account setup evidence: root/admin MFA, paid plan and initial credits user-reported; screenshots and current credit/expiry verification pending.
+- [ ] Finalize architecture and costs: default-VPC/subnet suitability, minimal temporary exposure, no ALB/NAT by default, log retention, teardown and residual-image-risk review. Depends on fresh pricing, credit/budget verification and access design.
+- [ ] Install Terraform locally; verify official archive checksum/signature as applicable; record version. Protect local state/plans/variables from Git.
+- [ ] Implement Terraform configuration for reviewed network, ECR, ECS, logs and IAM; pin provider constraints/lock; fmt/validate and review plan. Depends on architecture; plan may read AWS but apply requires approval.
+- [ ] Define least-privilege execution, task and GitHub OIDC roles; restrict trust to intended repository/ref/environment. Existing AdministratorAccess is bootstrap only. IAM changes require explicit approval.
+- [ ] Stage 3 completion: approved private ECR repository, versioned image push and digest evidence. Depends on approved foundation plan and refreshed image scan.
+- [ ] GitHub Actions: pinned actions, tests/lint, secret/dependency/image scans, OIDC push and gated deploy; demonstrate passing and deliberately blocked runs. Cloud delivery depends on approved roles/ECR; local workflow authoring can proceed earlier.
+- [ ] Stage 4: approved short-lived ECS Fargate rollout in eu-north-1, restricted access, healthy service and external endpoint checks where approved. Depends on ECR image, roles and reviewed network/cost plan.
+- [ ] Stage 6 monitoring/recovery: CloudWatch logs, justified alarm, controlled fault and rollback; collect dated before/during/after evidence. Depends on healthy deployment and approved simulation.
+- [ ] End-to-end release validation: new image/task revision delivered through CI; verify controls and document limitations.
+- [ ] Stage 7: approved teardown, verify all project-created resources across relevant regions/services, review delayed costs, finalize runbook/diagram/case study, secret/history review and tagged release.
+
+At each meaningful checkpoint update engineering log, evidence index and session state.
+No apply, IAM changes, paid resources or destructive cleanup without the user's explicit approval.

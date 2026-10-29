@@ -3,10 +3,10 @@
 Personal DevSecOps portfolio project: build, secure, deploy, monitor and tear down a small Flask application on ECS Fargate.
 
 ## Status
-Stages 0 and 1 complete. Stage 2 container builds and passes restricted runtime checks; scan findings are documented in docs/SECURITY.md. Container screenshot pending. No AWS infrastructure deployed.
+Stages 0-2 complete with local screenshots and runtime/scan evidence. AWS CLI/SSO and Stockholm inventory verified on October 29; Stage 3 is partial. No project workload deployed. See docs/SESSION-STATE.md for the current dated handoff and docs/SECURITY.md for remaining image findings.
 
 ## Scope
-Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway, EKS or Terraform in the initial scope.
+Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request; installation and infrastructure implementation remain pending.
 
 See docs/SESSION-STATE.md for the verified handoff and docs/ROADMAP.md for acceptance gates.
 

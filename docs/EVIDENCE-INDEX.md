@@ -18,3 +18,30 @@ Repository: https://github.com/TobiOnline/aws-ecs-secure-deployment (PRIVATE, ve
 | Stage 2 runtime | evidence/test-results/02-runtime.txt | 2026-10-28 | Non-root, healthy, both endpoints pass; image ID and size recorded; test removed | Localhost only |
 | Stage 2 scan | evidence/test-results/02-trivy.json; 02-scan-summary.txt; 02-scan-before.txt | 2026-10-28 | Five fixable HIGH entries removed; 44 unpatched HIGH remain | Public package/image identifiers |
 | Stage 2 screenshot | evidence/screenshots/02-docker-running-and-scan.png | 2026-10-28 | Non-root healthy container, successful endpoints and full severity counts visible | Inspected: no credentials |
+
+## 2026-10-29 audit and missing AWS evidence
+
+Existing local evidence was inspected, not accepted merely because paths exist:
+test transcript contains six passing tests; live transcript contains 200/200/404;
+runtime transcript identifies UID/image/size and successful HTTP checks. Recomputed scan
+counts match the summary. Exported config identity and ordered layer comparison establish
+scan linkage to the current local image. Existing PNGs match the screenshots reviewed in chat.
+
+| Evidence | Status | Result / limitation |
+|---|---|---|
+| evidence/commands/2026-10-29-project-audit.json | Saved | Sanitized current tests/tooling/SSO/inventory/budget audit and screenshot hashes |
+| screenshots/00, 01, 02 under evidence/ | Existing, valid PNGs, reviewed in prior chat | Local stages only; no AWS screenshots |
+| evidence/test-results/02-trivy.json | Existing, October 28 scan validated | 44 HIGH remain; not a fresh October 29 DB scan |
+| evidence/screenshots/03a-root-mfa.png | MISSING; proposed path only | Capture MFA-enabled status; hide account/email/device identifiers and never capture codes, QR seeds or recovery codes |
+| evidence/screenshots/03b-admin-mfa-sso.png | MISSING; proposed path only | Capture administrator MFA/SSO status without portal URL, credentials or tokens |
+| evidence/screenshots/03c-credits-plan.png | MISSING; proposed path only | Show plan, remaining credit and expiry; redact billing/account identifiers |
+| evidence/screenshots/03d-budget-alert.png | MISSING; proposed path only | Show amount, thresholds and alert configured; redact recipient/account identifiers |
+| evidence/screenshots/03e-stockholm-inventory.png | MISSING; proposed path only | Show selected services empty in Stockholm; limited scope must be stated |
+| evidence/screenshots/03-ecr-image.png | NOT STARTED | Save only after actual approved image publication |
+| evidence/screenshots/04-ecs-service-health.png | NOT STARTED | Real deployment, service health and logs required |
+| evidence/screenshots/05-ci-passing-and-blocked.png | NOT STARTED | Actual passing and intentionally failed workflows required |
+| evidence/screenshots/06-cloudwatch-incident.png | NOT STARTED | Observed incident and recovery required |
+| evidence/screenshots/07-cleanup-verification.png | NOT STARTED | Actual teardown and cost/resource verification required |
+
+MFA/plan/initial credit statements are user-reported until suitable evidence is saved or verified.
+No missing screenshot was created or marked as captured by this audit.
