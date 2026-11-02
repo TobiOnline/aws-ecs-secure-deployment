@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-02",
+  "method": "Opaque deterministic pixel redaction; originals preserved; metadata omitted",
+  "images": [
+    {
+      "source_filename": "Screenshot 2026-11-02 103550.png",
+      "output": "evidence/screenshots/08a-billing-month-summary.png",
+      "source_sha256": "3c2cbfb53de8046d20aab73c56fc62e3f957215d5ba98a0e4caf82e90e9a2cc5",
+      "output_sha256": "5d103fb08ab1908e0930dcbae8b39ba701b366dad7ced61a75d487aeda5bb1ea",
+      "redaction_boxes": [
+        [
+          0,
+          0,
+          1363,
+          40
+        ],
+        [
+          1280,
+          40,
+          1363,
+          85
+        ],
+        [
+          1140,
+          89,
+          1363,
+          138
+        ]
+      ],
+      "outside_masks_unchanged": true
+    },
+    {
+      "source_filename": "Screenshot 2026-11-02 103718.png",
+      "output": "evidence/screenshots/08b-budget-observed-spend.png",
+      "source_sha256": "1d05560ca7a028dee38102ef60f006bfbbdc0ffd338197feb5d7d5b34ef247ef",
+      "output_sha256": "9c274b2e900d10c198bc43463fac9e29347d397c172c7e62fc42e28e47a84010",
+      "redaction_boxes": [
+        [
+          0,
+          0,
+          1364,
+          40
+        ],
+        [
+          1280,
+          40,
+          1364,
+          85
+        ],
+        [
+          1140,
+          89,
+          1364,
+          138
+        ]
+      ],
+      "outside_masks_unchanged": true
+    }
+  ]
+}

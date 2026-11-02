@@ -10,9 +10,13 @@ a controlled failed release were verified. All 16 Terraform-managed resources we
 independent inventory and empty state confirmed. No demo service remains online.
 
 Conservative compute + IPv4 estimate: USD 0.01150609, excluding logs/storage/alarm/transfer/tax.
-Final AWS billing is pending. CI summary screenshots are saved; other live cloud screenshots are missing; sanitized API evidence and real
-workflow links are indexed in docs/EVIDENCE-INDEX.md. Original MVP outcomes 1-6 are verified;
-final cost/evidence closeout remains partial (6/7 outcomes, rounded 86%).
+Billing screenshots received November 2 show October account cost USD 0.23 and November
+month-to-date USD 0.02 (USD 0.25 combined observed account cost, below the USD 1 target).
+These are dashboard figures, not a final invoice or project-attributed service breakdown.
+Technical work and documentation handoff are complete. CI and billing screenshots are saved;
+other live cloud screenshots remain missing, supported by sanitized API evidence instead.
+Strict original acceptance remains 6/7 (86% rounded) because final invoice attribution and
+full visual evidence are unresolved. See docs/EVIDENCE-INDEX.md and the November 2 handoff.
 
 ## Scope
 Flask endpoints and tests, a non-root container, private ECR, ECS Fargate, CloudWatch, GitHub Actions with OIDC, incident recovery and verified cleanup. No ALB, NAT gateway or EKS in the initial scope. Terraform was added by the owner's October 29 request. Version 1.17.1 and the locked AWS provider describe the deployed-and-removed infrastructure.

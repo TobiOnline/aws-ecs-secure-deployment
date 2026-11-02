@@ -65,9 +65,9 @@ image digests and Git history supply the current reproducible evidence.
 MFA setup was owner-reported and is separate from this workload's deployment controls.
 
 This is a learning demo: no TLS/custom domain, availability guarantee, production risk
-acceptance, external alarm notifications or enforced AWS spending cap. Final billing is delayed.
+acceptance, external alarm notifications or enforced AWS spending cap. Billing dashboard evidence is saved; final invoice status and project attribution are unverified.
 
 ## Cost and outcome
-Six observed task lifetimes produced a conservative compute-plus-IPv4 estimate of USD 0.01150609. This overcounts provisioning time and uses a one-minute minimum per task, but excludes ECR/logs/alarm/transfer/tax. It is not the AWS bill. Actual final billing remains pending. The owner accepted an under-USD-1 target, not a guaranteed cap.
+Six observed task lifetimes produced a conservative compute-plus-IPv4 estimate of USD 0.01150609. This overcounts provisioning time and uses a one-minute minimum per task, but excludes ECR/logs/alarm/transfer/tax. It is not the AWS bill. November 2 dashboard evidence shows October account cost USD 0.23 and November MTD USD 0.02 (USD 0.25 combined observed account cost). This remains below the USD 1 target but is not a project-only service breakdown or finalized invoice. The owner accepted an under-USD-1 target, not a guaranteed cap.
 
-The cloud demonstration is complete and no workload remains running. Final portfolio closeout is partial: live cloud screenshots were not captured and delayed billing must be reviewed. No milestone or screenshot is fabricated. Tagged demo release: v0.1.0-demo; Git history records exact source and push state.
+The cloud demonstration and documentation handoff are complete; the October 29 inventory verified removal of the demo workload. Billing screenshots are now saved, with account-level and invoice limitations stated above. Strict original evidence acceptance remains 6/7 (86% rounded): live cloud screenshots were not captured and final project-attributed invoice confirmation remains unverified. No milestone or screenshot is fabricated. Tagged demo release: v0.1.0-demo; Git history records exact source and push state.

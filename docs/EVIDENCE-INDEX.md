@@ -160,3 +160,19 @@ GitHub run pages persist after teardown; live cloud images cannot be recreated r
 | evidence/commands/2026-10-29-ci-screenshot-redactions.json | Pixel-preserving redaction verification and source/output hashes |
 
 These two images fulfill the CI summary screenshot gap instead of the earlier proposed combined 05-ci-passing-and-blocked.png. Individual steps are not visible in these captures; refer to saved run JSON for step-level proof. Other live cloud images and final billing confirmation remain missing.
+
+
+## 2026-11-02 billing closeout evidence
+
+| Evidence | Observed result / limit |
+|---|---|
+| evidence/screenshots/08a-billing-month-summary.png | Primary: October account cost USD 0.23; November MTD USD 0.02; not a service breakdown/final invoice |
+| evidence/screenshots/08b-budget-observed-spend.png | Supporting: USD 1 budget, USD 0.02 spend, Exceeded (1); alert delivery not proven |
+| evidence/commands/2026-11-02-billing-redactions.json | Original/output hashes, opaque masks, unchanged pixels outside masks |
+
+The supplied 103755 service-chart screenshot was reviewed but not added: the summary is
+clearer and more precise. Chart categories include KMS as well as ECS; project attribution
+is unresolved. Combined observed October/November account cost is USD 0.25, below target;
+USD 0.02 alone is not the demo total. No invoice finalization status is visible.
+Missing live ECR/ECS/CloudWatch/cleanup screenshots remain missing, supported instead by
+the previously indexed API evidence. No replacement imagery or new deployment created.

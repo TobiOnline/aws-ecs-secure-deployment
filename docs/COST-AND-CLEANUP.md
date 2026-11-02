@@ -130,3 +130,32 @@ Task timestamps and rates recorded in task-cost-estimate evidence. No static AWS
 Next action after billing updates: inspect Bills by ECS/Fargate, VPC IPv4, ECR and CloudWatch,
 record final amount and timestamp here. Existing budget alert remains account-level and does
 not cap spending. No deployment is necessary for cost review.
+
+
+## 2026-11-02 - Billing evidence and final documentation closeout
+
+User-supplied November 2 screenshots were inspected and sanitized. The primary image
+08a-billing-month-summary.png shows October 2026 account cost USD 0.23 and November
+month-to-date USD 0.02: USD 0.25 combined observed account cost, below the USD 1 target.
+This is account-level dashboard evidence, not a project-attributed service breakdown or
+a finalized invoice. The November USD 0.02 alone is not the October project's total.
+The service chart also displays non-ECS categories, including KMS; exact charge attribution
+and any continuing account-level charges are not established by these captures. No new
+AWS inventory or mutations were performed, and no workload was restarted. October 29
+cleanup verification remains the last independent resource inventory.
+
+08b-budget-observed-spend.png is supporting evidence: USD 1 budget, USD 0.02 displayed
+spend, and Exceeded (1). The existing alert threshold was USD 0.01; an exceeded alert
+does not imply the USD 1 allowance was exceeded. This capture and the home dashboard's
+OK indicator differ; neither proves alert delivery or enforces a spending cap.
+
+Opaque masks hide browser tabs/profile, AWS account number and administrator identity.
+Original Downloads images are unchanged; all pixels outside masks verified unchanged.
+Hashes and masks: evidence/commands/2026-11-02-billing-redactions.json.
+
+Technical implementation, rollback, teardown and documentation handoff are complete.
+Strict original acceptance remains 6/7 (86% rounded): outcome 7 has billing evidence now,
+but final project-attributed invoice confirmation and uncaptured live cloud screenshots
+remain documented limitations. These are optional follow-up evidence items for the
+closed demonstration; no redeployment is needed. Do not label this 100% evidence coverage.
+No automatic scanning triggers, repository visibility changes or paid resources were added.
